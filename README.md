@@ -47,7 +47,25 @@ Gifs animados e outras ilustrações são bem-vindos! -->
 
 ## Uso 
 
-Para a execução do projeto, primeiramente clone o repositório em sua máquina: 
+### Ambiente Linux
+
+Para a execução do projeto em ambiente, primeiramente clone o repositório em sua máquina: 
+
+```
+git clone git@github.com:UnBParadigmas2023-1/2023.1_G4_SMA_Cars_n_Lights.git
+```
+
+Logo após, vá para a pasta *cars-n-lights*, onde o projeto está localizado:
+
+```
+cd 2023.1_G4_SMA_Cars_n_Lights/cars-n-lights/
+```
+
+Então, com o terminal aberto no diretório em questão, rode o seguinte comando: 
+
+```
+make build-and-run
+```
 
 <!-- Explique como usar seu projeto.
 Procure ilustrar em passos, com apoio de telas do software, seja com base na interface gráfica, seja com base no terminal.
@@ -67,18 +85,51 @@ OBS: TODOS DEVEM PARTICIPAR, CONFERINDO PONTOS DE VISTA.
 TEMPO: +/- 15min -->
 
 ## Participações
+
+## Participações
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
-| Fulano  |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
+| André Corrêa da Silva | Participação em andamento. |  Nula  |
+| Douglas da Silva Monteles | Participação em andamento. |  Excelente  |
+| Eliseu Kadesh Rosa Assunção Jr. |  Participação em andamento. |  Excelente  |
+| Felipe Candido de Moura | Participação em andamento.  |  Nula  |
+| Gabriel Mariano da Silva |  Participação em andamento. |  Nula  |
+| João Lucas Pinto Vasconcelos | Participação em andamento. |  Excelente  |
+| Matheus Pimentel Leal | Participação em andamento. |  Nula  |
+| Rafael Fernandes Amancio | Participação em andamento. |  Excelente  |
+| Victor Eduardo Araújo Ribeiro | Participação em andamento. |  Excelente  |
 
 ## Outros 
-Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
+
+### Lições Aprendidas
+
+Em andamento.
+
+### Percepções
+
+- Durante o desenvolvimento do projeto foram encontradas dificuldades relativas à configuração do ambiente. Como os diferentes membros do grupo usam variados *sistemas operacionais*, a configuração das tecnologias necessárias para a execução do projeto adotou certo grau de dificuldade, que exigiu pesquisa e cooperação entre os membros para a resolução dos mesmos;
+- Em andamento;
+
+### Contribuições e Fragilidades
+
+Em andamento.
+
+### Trabalhos Futuros
+
+Em andamento
+
+
+<!-- Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
 (i) Lições Aprendidas;
 (ii) Percepções;
 (iii) Contribuições e Fragilidades, e
-(iV) Trabalhos Futuros.
+(iV) Trabalhos Futuros. -->
 
 ## Fontes
-Referencie, adequadamente, as referências utilizadas.
-Indique ainda sobre fontes de leitura complementares.
+
+* **JADE - JAVA Agent Development Framework**. Disponível em: <https://jade.tilab.com/>;
+* Em andamento.
+
+<!-- Referencie, adequadamente, as referências utilizadas.
+Indique ainda sobre fontes de leitura complementares. -->
