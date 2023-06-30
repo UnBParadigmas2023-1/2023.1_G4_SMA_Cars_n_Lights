@@ -36,3 +36,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Configuration files ###
+APDescription.txt
+MTPs-Main-Container.txt
