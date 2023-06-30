@@ -1,4 +1,4 @@
-PATH_PROJECT_JAR = target/city-projec-1.0-SNAPSHOT.jar
+PATH_PROJECT_JAR = target/cars-n-lights-1.0-SNAPSHOT.jar
 PROJECT_GROUP    = org.fga.city
 JADE_AGENTS      = mainAgent:$(PROJECT_GROUP).City;mainAgent2:$(PROJECT_GROUP).agents.CarAgent(A)
 JADE_FLAGS 		 = -gui -agents "$(JADE_AGENTS)"
