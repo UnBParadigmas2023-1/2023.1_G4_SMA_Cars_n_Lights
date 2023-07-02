@@ -88,7 +88,7 @@ cd .\2023.1_G4_SMA_Cars_n_Lights\cars-n-lights\
 Agora, é necessário que sua máquina seja capaz de executar os comandos presentes no arquivo [**Makefile**](./cars-n-lights/Makefile). Para tal, siga os passos do seguinte [**TUTORIAL**](https://linuxhint.com/run-makefile-windows/). Uma vez que seu dispositivo é capaz de executar o **Makefile**, siga o comando:
 
 ```
-make build-and-run
+make win-build-and-run
 ```
 
 <!-- Explique como usar seu projeto.
@@ -162,6 +162,7 @@ Em andamento.
 
 - **JADE - JAVA Agent Development Framework**. Disponível em: <https://jade.tilab.com/>;
 - **How to Run a Makefile in Windows**. Disponível em: <https://linuxhint.com/run-makefile-windows/>;
+- **JADE API Documentation**. Disponível em: <https://jade.tilab.com/doc/api/index.html>;
 - Em andamento.
 
 <!-- Referencie, adequadamente, as referências utilizadas.
