@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of = {"label"})
+@EqualsAndHashCode(of = { "label" })
 public class Car {
 
     private String label;
@@ -19,8 +19,10 @@ public class Car {
     private Integer speed;
     private Color color;
     private CarDirection carDirection;
+    private String origin;
+    private String destiny;
 
-    public void updateCarPosition(int speed, CarDirection carDirection)  {
+    public void updateCarPosition(int speed, CarDirection carDirection) {
         if (carDirection != CarDirection.KEEP) {
             this.carDirection = carDirection;
         }

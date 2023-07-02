@@ -101,16 +101,16 @@ public class GraphStreetComponent extends JPanel {
             g2d.setColor(car.getColor());
             switch (car.getCarDirection()) {
                 case UP:
-                    x += (GraphStreetComponent.SQUARE_SIZE / 2) - (GraphStreetComponent.SQUARE_SIZE / 4) - 10;
+                    x += (GraphStreetComponent.SQUARE_SIZE / 2) - (GraphStreetComponent.SQUARE_SIZE / 4) - 30;
                     break;
                 case DOWN:
-                    x -= (GraphStreetComponent.SQUARE_SIZE / 2) - (GraphStreetComponent.SQUARE_SIZE / 4) - 10;
+                    x -= (GraphStreetComponent.SQUARE_SIZE / 2) - (GraphStreetComponent.SQUARE_SIZE / 4) - 30;
                     break;
                 case LEFT:
-                    y += (GraphStreetComponent.SQUARE_SIZE / 2) - (GraphStreetComponent.SQUARE_SIZE / 4) - 10;
+                    y += (GraphStreetComponent.SQUARE_SIZE / 2) - (GraphStreetComponent.SQUARE_SIZE / 4) - 30;
                     break;
                 case RIGHT:
-                    y -= (GraphStreetComponent.SQUARE_SIZE / 2) - (GraphStreetComponent.SQUARE_SIZE / 4) - 10;
+                    y -= (GraphStreetComponent.SQUARE_SIZE / 2) - (GraphStreetComponent.SQUARE_SIZE / 4) - 30;
                     break;
             }
             g2d.fill(new Rectangle(x, y, 15, 15));

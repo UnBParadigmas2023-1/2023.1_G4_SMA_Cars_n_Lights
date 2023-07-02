@@ -9,12 +9,13 @@ import org.fga.paradigmas.components.GraphStreetComponent;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of = {"label"})
+@EqualsAndHashCode(of = { "label" })
 public class Node {
 
     private String label;
     private Integer x;
     private Integer y;
+    // private CarDirection dir;
 
     public Quadrant getQuadrant(QuadrantIdentification identification) {
         int x = 0, y = 0;

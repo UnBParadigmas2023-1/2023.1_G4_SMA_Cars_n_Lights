@@ -12,7 +12,6 @@ public class NodesMockData {
 
     static {
         NODES.add(new Node("A", 50, 50));
-        NODES.add(new Node("A", 50, 50));
         NODES.add(new Node("B", 50, 200));
         NODES.add(new Node("C", 50, 500));
         NODES.add(new Node("D", 250, 50));
