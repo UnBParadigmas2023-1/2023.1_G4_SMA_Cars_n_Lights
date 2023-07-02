@@ -17,9 +17,9 @@ import org.fga.paradigmas.models.Node;
 
 public class GraphStreetComponent extends JPanel {
 
-    private static final Float STROKE_WIDTH = 35f;
-    private static final Integer SQUARE_SIZE = 75;
-    private static final Integer LINE_SPACING = 20;
+    public static final Float STROKE_WIDTH = 35f;
+    public static final Integer SQUARE_SIZE = 75;
+    public static final Integer LINE_SPACING = 20;
 
     private Graphics2D g2d;
     private Timer timer;
