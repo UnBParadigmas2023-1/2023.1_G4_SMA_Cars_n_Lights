@@ -13,7 +13,8 @@ public class CarsMockData {
     private static final List<Car> CARS = new ArrayList<>();
 
     static {
-        CARS.add(new Car("C1", NodesMockData.get("A").getX(), NodesMockData.get("A").getY(), 3, Color.BLUE,
+        // speed: múltiplos de 5 ou 1 :)
+        CARS.add(new Car("C1", NodesMockData.get("A").getX(), NodesMockData.get("A").getY(), 5, Color.BLUE,
                 CarDirection.RIGHT, "A", "G"));
         // CARS.add(new Car("C2",
         // NodesMockData.get("B").getQuadrant(QuadrantIdentification.Q2).getX(),

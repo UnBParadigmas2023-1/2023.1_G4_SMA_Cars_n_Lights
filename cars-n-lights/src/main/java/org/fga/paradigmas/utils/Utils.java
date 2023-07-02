@@ -10,4 +10,8 @@ public class Utils {
         }
     }
 
+    public static int getIntRandom(int max) {
+        return (int) (Math.random() * 10);
+    }
+
 }

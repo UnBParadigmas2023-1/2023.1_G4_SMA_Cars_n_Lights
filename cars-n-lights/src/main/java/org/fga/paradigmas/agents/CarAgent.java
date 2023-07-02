@@ -6,11 +6,9 @@ import org.fga.paradigmas.mocks.CarsMockData;
 import org.fga.paradigmas.mocks.NodesMockData;
 import org.fga.paradigmas.models.Car;
 import org.fga.paradigmas.models.CarDirection;
-import org.fga.paradigmas.models.QuadrantIdentification;
-import java.lang.Math;
-import org.fga.paradigmas.utils.Utils;
 import org.fga.paradigmas.models.Node;
-import java.util.ArrayList;
+import org.fga.paradigmas.utils.Utils;
+
 import java.util.List;
 import java.util.Random;
 
