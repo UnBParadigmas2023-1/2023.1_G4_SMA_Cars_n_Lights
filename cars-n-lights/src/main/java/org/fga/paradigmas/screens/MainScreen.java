@@ -2,6 +2,7 @@ package org.fga.paradigmas.screens;
 
 import org.fga.paradigmas.builders.CityStreetGraphBuilder;
 import org.fga.paradigmas.components.GraphStreetComponent;
+import org.fga.paradigmas.mocks.NodesMockData;
 import org.fga.paradigmas.models.CityGraph;
 import org.fga.paradigmas.models.Node;
 
@@ -21,16 +22,22 @@ public class MainScreen extends JFrame {
     }
 
     private void initMainScreen() {
-        Node n1 = new Node("A", 50, 50);
-        Node n2 = new Node("B", 50, 500);
-
-        CityStreetGraphBuilder graphBuilder = new CityStreetGraphBuilder();
+        CityStreetGraphBuilder graphBuilder = new CityStreetGraphBuilder(true);
 
         CityGraph cityGraph = graphBuilder
-                .addStreetNode(n1)
-                .addStreetNode(n2)
-                .addStreetNodeNeighbor(n1, n2)
-                .addStreetNodeNeighbor(n2, n1)
+                .addStreetNodes(NodesMockData.getNodes())
+                .addStreetNodeNeighbor(NodesMockData.get("A"), NodesMockData.get("B"))
+                .addStreetNodeNeighbor(NodesMockData.get("A"), NodesMockData.get("D"))
+                .addStreetNodeNeighbor(NodesMockData.get("B"), NodesMockData.get("C"))
+                .addStreetNodeNeighbor(NodesMockData.get("B"), NodesMockData.get("E"))
+                .addStreetNodeNeighbor(NodesMockData.get("C"), NodesMockData.get("F"))
+                .addStreetNodeNeighbor(NodesMockData.get("D"), NodesMockData.get("E"))
+                .addStreetNodeNeighbor(NodesMockData.get("D"), NodesMockData.get("G"))
+                .addStreetNodeNeighbor(NodesMockData.get("E"), NodesMockData.get("F"))
+                .addStreetNodeNeighbor(NodesMockData.get("E"), NodesMockData.get("H"))
+                .addStreetNodeNeighbor(NodesMockData.get("F"), NodesMockData.get("I"))
+                .addStreetNodeNeighbor(NodesMockData.get("G"), NodesMockData.get("H"))
+                .addStreetNodeNeighbor(NodesMockData.get("H"), NodesMockData.get("I"))
                 .build();
 
         SwingUtilities.invokeLater(() -> {
