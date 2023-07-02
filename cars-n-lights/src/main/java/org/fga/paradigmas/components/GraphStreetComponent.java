@@ -1,5 +1,6 @@
 package org.fga.paradigmas.components;
 
+import org.fga.paradigmas.mocks.CarsMockData;
 import org.fga.paradigmas.models.CityGraph;
 import org.fga.paradigmas.models.Node;
 
@@ -8,9 +9,9 @@ import java.awt.*;
 
 public class GraphStreetComponent extends JPanel {
 
-    private static final Float STROKE_WIDTH = 35f;
-    private static final Integer SQUARE_SIZE = 80;
-    private static final Integer LINE_SPACING = 20;
+    public static final Float STROKE_WIDTH = 35f;
+    public static final Integer SQUARE_SIZE = 80;
+    public static final Integer LINE_SPACING = 18;
 
     private Graphics2D g2d;
     private Timer timer;
@@ -32,6 +33,9 @@ public class GraphStreetComponent extends JPanel {
         // Desenha o grafo com as conexões
         cityGraph.getGraph().forEach(this::drawConnections);
         cityGraph.getNodes().forEach(this::drawNodes);
+
+        // Desenha o carro
+        drawCar();
 
         // Atualizar a tela
         updateScreen();
@@ -70,6 +74,29 @@ public class GraphStreetComponent extends JPanel {
 
         g2d.setColor(Color.WHITE);
         g2d.drawString(node.getLabel(), x + SQUARE_SIZE/2, y + SQUARE_SIZE/2);
+    }
+
+    private void drawCar() {
+        CarsMockData.getCars().forEach(car -> {
+            int x = car.getX(), y = car.getY();
+
+            g2d.setColor(car.getColor());
+            switch (car.getCarDirection()) {
+                case UP:
+                    x += (GraphStreetComponent.SQUARE_SIZE / 2) - (GraphStreetComponent.SQUARE_SIZE / 4) - 10;
+                    break;
+                case DOWN:
+                    x -= (GraphStreetComponent.SQUARE_SIZE / 2) - (GraphStreetComponent.SQUARE_SIZE / 4) - 10;
+                    break;
+                case LEFT:
+                    y += (GraphStreetComponent.SQUARE_SIZE / 2) - (GraphStreetComponent.SQUARE_SIZE / 4) - 10;
+                    break;
+                case RIGHT:
+                    y -= (GraphStreetComponent.SQUARE_SIZE / 2) - (GraphStreetComponent.SQUARE_SIZE / 4) - 10;
+                    break;
+            }
+            g2d.fill(new Rectangle(x, y, 15, 15));
+        });
     }
 
     private void updateScreen() {
