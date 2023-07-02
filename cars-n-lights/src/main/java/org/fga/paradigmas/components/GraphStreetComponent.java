@@ -1,17 +1,25 @@
 package org.fga.paradigmas.components;
 
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.RenderingHints;
+
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
 import org.fga.paradigmas.mocks.CarsMockData;
 import org.fga.paradigmas.models.CityGraph;
 import org.fga.paradigmas.models.Node;
 
-import javax.swing.*;
-import java.awt.*;
-
 public class GraphStreetComponent extends JPanel {
 
-    public static final Float STROKE_WIDTH = 35f;
-    public static final Integer SQUARE_SIZE = 80;
-    public static final Integer LINE_SPACING = 18;
+    private static final Float STROKE_WIDTH = 35f;
+    private static final Integer SQUARE_SIZE = 75;
+    private static final Integer LINE_SPACING = 20;
 
     private Graphics2D g2d;
     private Timer timer;
@@ -73,7 +81,17 @@ public class GraphStreetComponent extends JPanel {
         g2d.fill(new Rectangle(x, y, SQUARE_SIZE, SQUARE_SIZE));
 
         g2d.setColor(Color.WHITE);
-        g2d.drawString(node.getLabel(), x + SQUARE_SIZE/2, y + SQUARE_SIZE/2);
+
+        // Obtém as dimensões do texto
+        FontMetrics fm = g2d.getFontMetrics();
+        int textWidth = fm.stringWidth(node.getLabel());
+        int textHeight = fm.getHeight();
+
+        // Calcula a posição central do texto
+        int textX = x + (SQUARE_SIZE - textWidth) / 2;
+        int textY = y + (SQUARE_SIZE - textHeight) / 2 + fm.getAscent();
+
+        g2d.drawString(node.getLabel(), textX, textY);
     }
 
     private void drawCar() {

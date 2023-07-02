@@ -1,11 +1,11 @@
 package org.fga.paradigmas.models;
 
+import java.awt.Color;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-import java.awt.*;
 
 @Data
 @AllArgsConstructor

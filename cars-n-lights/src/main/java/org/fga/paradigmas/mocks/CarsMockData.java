@@ -1,15 +1,12 @@
 package org.fga.paradigmas.mocks;
 
-import org.fga.paradigmas.components.GraphStreetComponent;
-import org.fga.paradigmas.models.Car;
-import org.fga.paradigmas.models.CarDirection;
-import org.fga.paradigmas.models.Node;
-import org.fga.paradigmas.models.QuadrantIdentification;
-
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.fga.paradigmas.models.Car;
+import org.fga.paradigmas.models.CarDirection;
 
 public class CarsMockData {
 
