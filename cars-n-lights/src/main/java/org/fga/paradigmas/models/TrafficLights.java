@@ -14,6 +14,7 @@ public class TrafficLights extends Agent {
     
     private static final long serialVersionUID = 7L;
 
+
     protected void setup() {
 
         DFAgentDescription agentDesc = new DFAgentDescription();
@@ -46,24 +47,18 @@ public class TrafficLights extends Agent {
 
                 String msgContent = msg.getContent();
 
-                System.out.println("Conteúdo da mensagem recebida: " + msgContent);
-
                 switch (msgContent) {
-                    case "turnOff":
+                    case "false":
                         System.out.println("Turning traffic light off!");
                         break;
-                    case "turnOn":
+                    case "true":
                         System.out.println("Turning traffic light on!");
                         break;
-                    case "takeDown":
-                        System.out.println("No.");
-                        break;
                     default:
-                        System.out.println("Choose an option: turnOff or turnOn");
+                        System.out.println("Invalid option!");
                 }
 
             } else {
-                System.out.println("Bye!");
                 block();
             }
         

@@ -1,7 +1,6 @@
 PATH_PROJECT_JAR = target/cars-n-lights-1.0-SNAPSHOT.jar
-WIN_PATH_PROJECT_JAR = target\cars-n-lights-1.0-SNAPSHOT.jar
 PROJECT_GROUP    = org.fga.paradigmas
-JADE_AGENTS      = mainAgent:$(PROJECT_GROUP).App;
+JADE_AGENTS      = mainAgent:$(PROJECT_GROUP).App;commander1:$(PROJECT_GROUP).models.TrafficLightsCommander;trafficLight1:$(PROJECT_GROUP).models.TrafficLights;trafficLight2:$(PROJECT_GROUP).models.TrafficLights;
 JADE_FLAGS 		 = -gui -agents "$(JADE_AGENTS)"
 
 .PHONY:
@@ -24,18 +23,14 @@ clean:
 	@echo "Removendo a build do projeto"
 	./mvnw clean
 
-win-build-and-run:
+build-and-run-win:
 	@echo "Gerando a build e executando o projeto"
-	make win-clean win-build run
+	make clean-win build-win run
 
-win-build:
+build-win:
 	@echo "Gerando a build do projeto"
 	.\mvnw clean install
 
-win-run:
-	@echo "Executando o projeto com a última build criada"
-	java -cp $(WIN_PATH_PROJECT_JAR) jade.Boot $(JADE_FLAGS)
-
-win-clean:
+clean-win:
 	@echo "Removendo a build do projeto"
 	.\mvnw clean
