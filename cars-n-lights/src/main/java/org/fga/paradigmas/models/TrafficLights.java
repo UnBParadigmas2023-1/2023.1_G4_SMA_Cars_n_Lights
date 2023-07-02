@@ -1,4 +1,4 @@
-package org.fga.paradigmas.agents;
+package org.fga.paradigmas.models;
 
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
@@ -12,7 +12,7 @@ import jade.lang.acl.MessageTemplate;
 
 public class TrafficLights extends Agent {
     
-    private static final long serialVersionUID = 13L;
+    private static final long serialVersionUID = 7L;
 
     protected void setup() {
 
@@ -36,7 +36,7 @@ public class TrafficLights extends Agent {
 
     private class TestExampleClass extends CyclicBehaviour {
 
-        private static final long serialVersionUID = 13L;
+        private static final long serialVersionUID = 7L;
 
         public void action () {
             MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.PROPOSE); 
