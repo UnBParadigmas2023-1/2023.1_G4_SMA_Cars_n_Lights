@@ -11,7 +11,7 @@ import java.awt.*;
 public class GraphStreetComponent extends JPanel {
 
     private static final Float STROKE_WIDTH = 35f;
-    private static final Integer SQUARE_SIZE = 80;
+    private static final Integer SQUARE_SIZE = 75;
     private static final Integer LINE_SPACING = 20;
 
     private Graphics2D g2d;
@@ -74,7 +74,17 @@ public class GraphStreetComponent extends JPanel {
         g2d.fill(new Rectangle(x, y, SQUARE_SIZE, SQUARE_SIZE));
 
         g2d.setColor(Color.WHITE);
-        g2d.drawString(node.getLabel(), x + SQUARE_SIZE/2, y + SQUARE_SIZE/2);
+
+        // Obtém as dimensões do texto
+        FontMetrics fm = g2d.getFontMetrics();
+        int textWidth = fm.stringWidth(node.getLabel());
+        int textHeight = fm.getHeight();
+
+        // Calcula a posição central do texto
+        int textX = x + (SQUARE_SIZE - textWidth) / 2;
+        int textY = y + (SQUARE_SIZE - textHeight) / 2 + fm.getAscent();
+
+        g2d.drawString(node.getLabel(), textX, textY);
     }
 
     private void drawCar() {
