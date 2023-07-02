@@ -33,4 +33,10 @@ public class CityGraph {
         this.graph.get(node).add(neighbor);
     }
 
+    public boolean isNeighbor(Node node, Node neighborCandidate) {
+        return getNeighbors(node)
+                .stream()
+                .anyMatch(neighbors -> neighbors.getLabel().equals(neighborCandidate.getLabel()));
+    }
+
 }
