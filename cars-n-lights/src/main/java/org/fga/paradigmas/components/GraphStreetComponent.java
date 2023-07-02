@@ -1,5 +1,7 @@
 package org.fga.paradigmas.components;
 
+import org.fga.paradigmas.mocks.CarsMockData;
+import org.fga.paradigmas.models.Car;
 import org.fga.paradigmas.models.CityGraph;
 import org.fga.paradigmas.models.Node;
 
@@ -32,6 +34,9 @@ public class GraphStreetComponent extends JPanel {
         // Desenha o grafo com as conexões
         cityGraph.getGraph().forEach(this::drawConnections);
         cityGraph.getNodes().forEach(this::drawNodes);
+
+        // Desenha o carro
+        drawCar();
 
         // Atualizar a tela
         updateScreen();
@@ -70,6 +75,14 @@ public class GraphStreetComponent extends JPanel {
 
         g2d.setColor(Color.WHITE);
         g2d.drawString(node.getLabel(), x + SQUARE_SIZE/2, y + SQUARE_SIZE/2);
+    }
+
+    private void drawCar() {
+        g2d.setColor(Color.BLUE);
+
+        CarsMockData.getCars().forEach(car -> {
+            g2d.fill(new Rectangle(car.getX(), car.getY(), 15, 15));
+        });
     }
 
     private void updateScreen() {

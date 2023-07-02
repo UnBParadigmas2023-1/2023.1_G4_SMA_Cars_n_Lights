@@ -40,3 +40,7 @@ build/
 ### Configuration files ###
 APDescription.txt
 MTPs-Main-Container.txt
+
+### JADE ###
+cars-n-lights/APDescription.txt
+cars-n-lights/MTPs-Main-Container.txt
