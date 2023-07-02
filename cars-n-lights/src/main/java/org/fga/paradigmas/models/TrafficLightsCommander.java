@@ -17,9 +17,7 @@ import jade.lang.acl.MessageTemplate;
 public class TrafficLightsCommander extends Agent {
     
     private static final long serialVersionUID = 7L;
-
     private Hashtable<String, Boolean> trafficLightsCatalogue;
-
 
     protected void setup() {
 
@@ -59,7 +57,6 @@ public class TrafficLightsCommander extends Agent {
 
                 Set<String> trafficLightsKeys = trafficLightsCatalogue.keySet();
                 
-                
 
                 for (String  element : trafficLightsKeys) {
                     ACLMessage message = new ACLMessage(ACLMessage.PROPOSE);
@@ -78,9 +75,7 @@ public class TrafficLightsCommander extends Agent {
                 System.out.println("Bye!");
                 block();
             }
-        
         }
-
     }
 
     public void addTrafficLightsToCatalogue(final String name, final boolean state) {

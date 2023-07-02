@@ -1,5 +1,6 @@
 package org.fga.paradigmas.models;
 
+import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.domain.DFService;
@@ -13,7 +14,7 @@ import jade.lang.acl.MessageTemplate;
 public class TrafficLights extends Agent {
     
     private static final long serialVersionUID = 7L;
-
+    private static boolean state = false;
 
     protected void setup() {
 
@@ -38,33 +39,50 @@ public class TrafficLights extends Agent {
     private class TestExampleClass extends CyclicBehaviour {
 
         private static final long serialVersionUID = 7L;
+        private MessageTemplate mt;
 
         public void action () {
-            MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.PROPOSE); 
             ACLMessage msg = myAgent.receive(mt);
-
+            
             if (msg != null) {
+                
+                if (msg.getPerformative() == ACLMessage.PROPOSE) {
+                    String msgContent = msg.getContent();
+            
+                    switch (msgContent) {
+                        case "false":
+                            System.out.println("Turning traffic light off!");
+                            state = false;
+                            break;
 
-                String msgContent = msg.getContent();
+                        case "true":
+                            System.out.println("Turning traffic light on!");
+                            state = true;
+                            break;
 
-                switch (msgContent) {
-                    case "false":
-                        System.out.println("Turning traffic light off!");
-                        break;
-                    case "true":
-                        System.out.println("Turning traffic light on!");
-                        break;
-                    default:
-                        System.out.println("Invalid option!");
+                        default:
+                            System.out.println("Invalid option!");
+                    }
+    
                 }
+                
+                if (msg.getPerformative() == ACLMessage.REQUEST) {
+                    ACLMessage reply = msg.createReply();
 
+                    reply.setPerformative(ACLMessage.INFORM);
+                    reply.setContent("" + state);
+                    
+                    System.out.println(reply);
+                    send(reply);
+                }
+                
             } else {
                 block();
-            }
-        
+            }   
         }
-
     }
+
+    
 
     protected void takeDown () {
         try {
