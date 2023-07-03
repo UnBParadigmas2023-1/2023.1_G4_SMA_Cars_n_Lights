@@ -1,7 +1,10 @@
-package org.fga.paradigmas.models;
+package org.fga.paradigmas.agents;
 
 import java.util.Hashtable;
 import java.util.Set;
+
+import org.fga.paradigmas.mocks.CommandersMockData;
+import org.fga.paradigmas.models.TrafficLightCommander;
 
 import jade.core.AID;
 import jade.core.Agent;
@@ -14,14 +17,22 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 
-public class TrafficLightsCommander extends Agent {
+public class TrafficLightCommanderAgent extends Agent {
+
+    private TrafficLightCommander commander;
     
     private static final long serialVersionUID = 7L;
     private Hashtable<String, Boolean> trafficLightsCatalogue;
 
+    public TrafficLightCommanderAgent() {}
+
+    @Override
     protected void setup() {
+        Object[] args = getArguments();
 
         trafficLightsCatalogue = new Hashtable<String, Boolean>();
+
+        this.commander = CommandersMockData.get((String) args[0]);
 
         DFAgentDescription agentDesc = new DFAgentDescription();
         agentDesc.setName(getAID());
@@ -32,8 +43,9 @@ public class TrafficLightsCommander extends Agent {
 
         agentDesc.addServices(svcDesc);
 
-        this.addTrafficLightsToCatalogue("trafficLight1", false);
-        this.addTrafficLightsToCatalogue("trafficLight2", true);
+        this.commander.getTrafficLights().forEach(trafficLight -> {
+            this.addTrafficLightsToCatalogue(trafficLight.getLabel(), trafficLight.getState());
+        });
 
         try {
             DFService.register(this, agentDesc);

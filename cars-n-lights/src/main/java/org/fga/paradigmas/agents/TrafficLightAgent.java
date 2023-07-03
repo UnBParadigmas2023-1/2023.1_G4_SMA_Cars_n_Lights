@@ -1,4 +1,7 @@
-package org.fga.paradigmas.models;
+package org.fga.paradigmas.agents;
+
+import org.fga.paradigmas.mocks.TrafficLightsMockData;
+import org.fga.paradigmas.models.TrafficLight;
 
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
@@ -10,19 +13,26 @@ import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 
 
-public class TrafficLights extends Agent {
+public class TrafficLightAgent extends Agent {
+
+    private TrafficLight trafficLight;
+
+    public TrafficLightAgent() {}
     
     private static final long serialVersionUID = 7L;
     private static boolean state = false;
 
+    @Override
     protected void setup() {
+        Object[] args = getArguments();
+        this.trafficLight = TrafficLightsMockData.get((String) args[0]);
 
         DFAgentDescription agentDesc = new DFAgentDescription();
         agentDesc.setName(getAID());
 
         ServiceDescription svcDesc = new ServiceDescription();
         svcDesc.setType("trafficLight");
-        svcDesc.setName("trafficLight_" + getAID());
+        svcDesc.setName(this.trafficLight.getLabel());
 
         agentDesc.addServices(svcDesc);
 
@@ -31,7 +41,7 @@ public class TrafficLights extends Agent {
         } catch (FIPAException e) {
             e.printStackTrace();
         }
-
+        
         addBehaviour(new TestExampleClass());
     }
 
