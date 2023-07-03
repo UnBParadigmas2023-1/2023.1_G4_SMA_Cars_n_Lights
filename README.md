@@ -24,9 +24,9 @@
 
 ## Sobre
 
-O presente projeto visa simular o comportamento do trânsito de uma cidade, incluindo **pedestres**, **motoristas**, **semáforos** e **faixas de pedestre**, sendo estes representados enquanto agentes que interagem entre si e com os elementos da cidade.
+O presente projeto visa simular o comportamento do trânsito de uma cidade, incluindo **veículos**, **semáforos**, **controladores de semáforos**, **pedestres**, e **faixas de pedestre**, sendo estes representados enquanto agentes que interagem entre si e com os elementos da cidade.
 
-O propósito do projeto é exercitar o **Paradigma Sistema Multiagentes**, de modo que todos os elementos supracitados apresentem comportamentos autônomos, capacidade de reação a estímulos e capacidade de comunicação com os demais agentes.
+O propósito do projeto é exercitar o **Paradigma Sistema Multiagentes**, de modo que todos os elementos supracitados apresentem comportamentos autônomos, capacidade de reação a estímulos e capacidade de possível comunicação com os demais agentes.
 
 <!-- Descreva o seu projeto em linhas gerais. 
 Use referências, links, que permitam conhecer um pouco mais sobre o projeto.
@@ -34,7 +34,31 @@ Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no 
 
 ## Screenshots
 
+### Projeto
+
 Em andamento.
+
+### Semáforos e *Commanders*
+
+A interface do projeto apresenta elementos existentes em um cenário cotidiano do ambiente de locomoção urbano: ruas, cruzamentos, automóveis e semáforos.
+
+No contexto do projeto, há uma série de semáforos em variados cruzamentos, sendo estes implementados como agentes e comandados por alguns agentes "especiais", os **commanders**.
+
+Os **commanders** são os agentes responsáveis por controlar a mudança de estado de um subgrupo de semáforos, de modo que a alternância de estado destes seja determinada através de mensagem enviada por estes aos seus respectivos semáforos.
+
+No projeto, há doze semáforos ao todo, sendo estes divididos nas "áreas de influência" de cinco **commanders** diferentes, conforme mostra a imagem abaixo:
+
+![Semáforos e *Commanders*](assets/commanders.jpg)
+
+Vale destacar que as os semáforos são representados pelas "circunferências" localizadas ao lado de cruzamentos, podendo estes adotar duas diferentes cores: verde (quando aberto) e vermelho (quando fechado).
+
+![Legenda dos Semáforos](assets/legenda_semaforos.jpg)
+*Acima, as duas possíveis representações dos semáforos.*
+
+Já os veículos são representados por "quadrados" com cores aleatórias que se movem ao longo das vias e cruzamentos, como pode ser visto abaixo:
+
+![Legenda dos Veículos](assets/legenda_carros.jpg)
+*Acima, algumas das possíveis representações dos veículos.*
 
 <!-- Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento. -->
 
@@ -88,7 +112,7 @@ cd .\2023.1_G4_SMA_Cars_n_Lights\cars-n-lights\
 Agora, é necessário que sua máquina seja capaz de executar os comandos presentes no arquivo [**Makefile**](./cars-n-lights/Makefile). Para tal, siga os passos do seguinte [**TUTORIAL**](https://linuxhint.com/run-makefile-windows/). Uma vez que seu dispositivo é capaz de executar o **Makefile**, siga o comando:
 
 ```
-make win-build-and-run
+make build-and-run-win
 ```
 
 <!-- Explique como usar seu projeto.
@@ -110,20 +134,19 @@ TEMPO: +/- 15min -->
 
 ## Participações
 
-## Participações
+Abaixo, as informações relativas à área e à significância da contribuição de cada membro ao projeto:
 
-Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
-|Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
+|Nome do Membro | Contribuição | Significância da Contribuição para o Projeto |
 | -- | -- | -- |
-| André Corrêa da Silva | Participação em andamento. |  Nula  |
-| Douglas da Silva Monteles | Participação em andamento. |  Excelente  |
+| André Corrêa da Silva           | Participação em andamento. |  Excelente  |
+| Douglas da Silva Monteles       | Participação em andamento. |  Excelente  |
 | Eliseu Kadesh Rosa Assunção Jr. |  Participação em andamento. |  Excelente  |
-| Felipe Candido de Moura | Participação em andamento.  |  Nula  |
-| Gabriel Mariano da Silva |  Participação em andamento. |  Nula  |
-| João Lucas Pinto Vasconcelos | Participação em andamento. |  Excelente  |
-| Matheus Pimentel Leal | Participação em andamento. |  Nula  |
-| Rafael Fernandes Amancio | Participação em andamento. |  Excelente  |
-| Victor Eduardo Araújo Ribeiro | Participação em andamento. |  Excelente  |
+| Felipe Candido de Moura         | Participação em andamento.  |  Excelente  |
+| Gabriel Mariano da Silva        |  Participação em andamento. |  Excelente  |
+| João Lucas Pinto Vasconcelos    | Participação em andamento. |  Excelente  |
+| Matheus Pimentel Leal           | Participação em andamento. |  Excelente  |
+| Rafael Fernandes Amancio        | Participação em andamento. |  Excelente  |
+| Victor Eduardo Araújo Ribeiro   | Participação em andamento. |  Excelente  |
 
 ## Outros
 
@@ -151,10 +174,6 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 (iV) Trabalhos Futuros. -->
 
 ### Instalação e Configuração do JDK e JRE
-
-Em andamento.
-
-## Troubleshooting
 
 Em andamento.
 
