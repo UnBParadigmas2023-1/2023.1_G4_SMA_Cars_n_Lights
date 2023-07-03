@@ -9,7 +9,7 @@ JADE_FLAGS 		 = -gui -agents "$(JADE_AGENTS)"
 
 build-and-run:
 	@echo "Gerando a build e executando o projeto"
-	make clean build run
+	make build run
 
 build:
 	@echo "Gerando a build do projeto"
