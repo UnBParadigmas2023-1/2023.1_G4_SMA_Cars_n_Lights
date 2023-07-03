@@ -17,6 +17,8 @@ public class CarsMockData {
         CARS.add(new Car("C2", NodesMockData.get("B").getX(), NodesMockData.get("B").getY(), 5, Color.BLUE, CarDirection.DOWN, NodesMockData.get("A")));
         CARS.add(new Car("C3", NodesMockData.get("C").getX(), NodesMockData.get("C").getY(), 5, Color.GREEN, CarDirection.RIGHT, NodesMockData.get("G")));
         CARS.add(new Car("C4", NodesMockData.get("C").getX(), NodesMockData.get("C").getY(), 1, Color.MAGENTA, CarDirection.RIGHT, NodesMockData.get("Z")));
+        CARS.add(new Car("C5", NodesMockData.get("G").getX(), NodesMockData.get("G").getY(), 1, Color.MAGENTA, CarDirection.RIGHT, NodesMockData.get("Z")));
+        CARS.add(new Car("C6", NodesMockData.get("H").getX(), NodesMockData.get("H").getY(), 1, Color.MAGENTA, CarDirection.RIGHT, NodesMockData.get("Z")));
     }
 
     public static Car get(String label) {
