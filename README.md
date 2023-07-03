@@ -175,14 +175,39 @@ Abaixo, as informações relativas à área e à significância da contribuiçã
 
 ### Instalação e Configuração do JDK e JRE
 
-Em andamento.
+Ter o **Java Development Kit (JDK)** e o **Java Runtime Environment (JRE)** instalados em sua máquina é essencial para a execução do projeto. Para tal, siga os tutoriais de instalação dos *softwares* em questão para cada sistema operacional no qual se deseja executar o projeto.
+
+#### Ambiente Linux
+
+Para a instalação do *JDK* (versão 17) e do *JRE* em sua máquina com *Linux*, recomenda-se o acesso ao tutorial mais "agradável" para a resolução de sua dúvida dentre as seguintes opções:
+
+- [Página de Download do JDK 17](https://www.oracle.com/br/java/technologies/downloads/#java17): baixe a versão mais adequada para o seu sistema operacional;
+- [Documentação da *Oracle* para instalação do JDK em plataforma *Linux*](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-linux-platforms.html#GUID-737A84E4-2EFF-4D38-8E60-3E29D1B884B8): apesar de seu conteúdo ser relativamente denso e avançado, é possível compreender como se dá a instalação do *JDK* em ambiente *Linux*;
+- [Guia de instalação do *Oracle Java 17* no *Ubuntu 22.04*](https://www.fosstechnix.com/install-oracle-java-17-on-ubuntu-22-04-lts/): mais "palatável" que o tutorial anterior, este também apresenta como proceder para instalar o *JDK versão 17* em sua máquina *Linux*;
+- [*Downloads* do *Java* para Todos os Sistemas operacionais](https://www.java.com/pt-BR/download/manual.jsp): Uma das formas de se proceder com a instalação do *JRE* é instalar a versão mais adequada para a sua máquina.
+- [Guia do *Ubuntu* para instalação do *OpenJDK JRE*](https://ubuntu.com/tutorials/install-jre#1-overview): O tutorial apresenta um passo a passo para a instalação do *OpenJDK JRE*, bastando apenas que se atente para a instalação da versão *LTS* do *OpenJDK JRE* (conforme nota apresentada em *link* do segundo passo do tutorial).
+
+#### Ambiente Windows
+
+Para a instalação do *JDK* (versão 17) e do *JRE* em sua máquina com *Windows*, recomenda-se o acesso ao tutorial mais "agradável" para a resolução de sua dúvida dentre as seguintes opções:
+
+- [Página de Download do JDK 17](https://www.oracle.com/br/java/technologies/downloads/#java17): baixe a versão mais adequada para o seu sistema operacional;
+- [*Downloads* do *Java* para Todos os Sistemas operacionais](https://www.java.com/pt-BR/download/manual.jsp): Uma das formas de se proceder com a instalação do *JRE* é instalar a versão mais adequada para a sua máquina.
+- [Guia de instalação do *JDK* no *Windows, Mac* e *Linux*](https://www.geeksforgeeks.org/download-and-install-java-development-kit-jdk-on-windows-mac-and-linux/): O guia apresenta um passo a passo intuitivo de instalação do *JDK versão 17* e de configuração das variáveis de ambiente no *Windows*;
+- [Guia de instalação do *JRE* em ambiente *Windows*](https://support.quest.com/pt-br/kb/4229374/jre-version-1-8-or-above-installation-for-microsoft-windows): O breve tutorial apresenta imagens do passo a passo na instalação do *JRE* no *Windows*.
 
 ## Fontes
 
 - **JADE - JAVA Agent Development Framework**. Disponível em: <https://jade.tilab.com/>;
 - **How to Run a Makefile in Windows**. Disponível em: <https://linuxhint.com/run-makefile-windows/>;
 - **JADE API Documentation**. Disponível em: <https://jade.tilab.com/doc/api/index.html>;
-- Em andamento.
+- **Java downloads - JDK 17**. Disponível em: <https://www.oracle.com/br/java/technologies/downloads/#java17>;
+- **Installation of the JDK on Linux Platforms**. Disponível em: <https://docs.oracle.com/en/java/javase/17/install/installation-jdk-linux-platforms.html#GUID-737A84E4-2EFF-4D38-8E60-3E29D1B884B8>;
+- **"How to Install Oracle Java 17 on Ubuntu 22.04 LTS" por Shweta Mamidwar**. Disponível em: <https://www.fosstechnix.com/install-oracle-java-17-on-ubuntu-22-04-lts/>;
+- **Downloads do Java para Todos os Sistemas Operacionais**. Disponível em: <https://www.java.com/pt-BR/download/manual.jsp>;
+- **Install the Java Runtime Environment**. Disponível em: <https://ubuntu.com/tutorials/install-jre#1-overview>.
+- **JRE(version 1.8 or above) Installation for Microsoft Windows (4229374)**. Disponível em: <https://support.quest.com/pt-br/kb/4229374/jre-version-1-8-or-above-installation-for-microsoft-windows>.
+- **Download and Install Java Development Kit (JDK) on Windows, Mac, and Linux**. Disponível em: <https://www.geeksforgeeks.org/download-and-install-java-development-kit-jdk-on-windows-mac-and-linux/>.
 
 <!-- Referencie, adequadamente, as referências utilizadas.
 Indique ainda sobre fontes de leitura complementares. -->
