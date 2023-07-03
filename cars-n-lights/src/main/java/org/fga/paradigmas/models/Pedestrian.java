@@ -33,6 +33,27 @@ public class Pedestrian{
     return this.posY;
   }
 
+  private void setLabel(String label) {
+    this.label = label;
+  }
+  public String getLabel() {
+    return this.label;
+  }
+
+  private void setSpeed(Integer speed) {
+    this.speed = speed;
+  }
+  private Integer getSpeed() {
+    return this.speed;
+  }
+
+  private void setColor(Color color) {
+    this.color = color;
+  }
+  public Color getColor() {
+    return this.color;
+  }
+
   public void updatePosition(int speed, Direction direction) {
     switch (this.direction) {
       case UP:
