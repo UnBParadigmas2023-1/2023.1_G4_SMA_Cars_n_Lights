@@ -7,11 +7,13 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
+import java.awt.geom.Ellipse2D;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import org.fga.paradigmas.mocks.CarsMockData;
+import org.fga.paradigmas.mocks.TrafficLightsMockData;
 import org.fga.paradigmas.models.CityGraph;
 import org.fga.paradigmas.models.Node;
 
@@ -20,6 +22,7 @@ public class GraphStreetComponent extends JPanel {
     public static final Float STROKE_WIDTH = 50f;
     public static final Integer SQUARE_SIZE = 75;
     public static final Integer LINE_SPACING = 20;
+    private static final Integer ELLIPSE_SIZE = 10;
 
     private Graphics2D g2d;
     private Timer timer;
@@ -44,6 +47,12 @@ public class GraphStreetComponent extends JPanel {
 
         // Desenha o carro
         drawCar();
+
+        // Desenha os semaforos
+        cityGraph.getNodes().forEach(this::drawTrafficLights);
+
+        // Muda a cor dos semaforos
+        changeColor();
 
         // Atualizar a tela
         updateScreen();
@@ -104,6 +113,114 @@ public class GraphStreetComponent extends JPanel {
         });
     }
 
+    private void drawTrafficLights(Node node) {
+        int x, y;
+        Color cor = Color.RED;
+
+        switch (node.getLabel()) {
+
+            case "A":
+            case "B":
+            case "D":
+            case "E":
+
+                x = node.getX() + 35;
+                y = node.getY() + 75;
+
+                g2d.setColor(cor);
+                g2d.fill(new Ellipse2D.Double(x, y, ELLIPSE_SIZE, ELLIPSE_SIZE));
+                break;
+
+            default:
+                break;
+        }
+
+        switch (node.getLabel()) {
+
+            case "B":
+            case "C":
+            case "E":
+            case "F":
+
+                x = node.getX() + 75;
+                y = node.getY() + 35;
+
+                g2d.setColor(cor);
+                g2d.fill(new Ellipse2D.Double(x, y, ELLIPSE_SIZE, ELLIPSE_SIZE));
+                break;
+
+            default:
+                break;
+        }
+
+        if (node.getLabel() == "D" || node.getLabel() == "G") {
+            x = node.getX() - 5;
+            y = node.getY() + 35;
+
+            g2d.setColor(cor);
+            g2d.fill(new Ellipse2D.Double(x, y, ELLIPSE_SIZE, ELLIPSE_SIZE));
+        }
+
+        if (node.getLabel() == "H" || node.getLabel() == "I") {
+            x = node.getX() + 35;
+            y = node.getY() - 5;
+
+            g2d.setColor(cor);
+            g2d.fill(new Ellipse2D.Double(x, y, ELLIPSE_SIZE, ELLIPSE_SIZE));
+        }
+    }
+
+
+    private void updateTrafficLights(Node node, String trafficLightName, Color cor) {
+        int x = 0;
+        int y = 0;
+
+        switch (trafficLightName) {
+
+            case "trafficLight1":
+            case "trafficLight6":
+            case "trafficLight3":
+            case "trafficLight8":
+
+                x = node.getX() + 35;
+                y = node.getY() + 75;
+
+                break;
+            
+            case "trafficLight2":
+            case "trafficLight7":
+            case "trafficLight4":
+            case "trafficLight9":
+
+                x = node.getX() + 75;
+                y = node.getY() + 35;
+
+                break;
+
+            case "trafficLight5":
+            case "trafficLight10":
+
+                x = node.getX() - 5;
+                y = node.getY() + 35;
+
+                break;
+
+            case "trafficLight11":
+            case "trafficLight12": 
+
+                x = node.getX() + 35;
+                y = node.getY() - 5;
+
+                break;
+        
+            default:
+                break;
+        }
+
+        g2d.setColor(cor);
+        g2d.fill(new Ellipse2D.Double(x, y, ELLIPSE_SIZE, ELLIPSE_SIZE));
+    }
+
     private void updateScreen() {
         this.timer = new Timer(100, (listener) -> {
             timer.stop();
@@ -111,5 +228,14 @@ public class GraphStreetComponent extends JPanel {
         });
 
         timer.start();
+    }
+
+    public void changeColor () {
+        TrafficLightsMockData.getTrafficLights().forEach(trafficLight -> {
+            boolean state = trafficLight.getState();
+            if(state) updateTrafficLights(trafficLight.getNode(), trafficLight.getLabel(), Color.GREEN);
+            else updateTrafficLights(trafficLight.getNode(), trafficLight.getLabel(), Color.RED);
+        });
+
     }
 }

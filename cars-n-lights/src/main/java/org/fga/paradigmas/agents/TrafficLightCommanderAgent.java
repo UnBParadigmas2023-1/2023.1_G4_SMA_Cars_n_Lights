@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.fga.paradigmas.mocks.CommandersMockData;
 import org.fga.paradigmas.models.TrafficLightCommander;
+import org.fga.paradigmas.utils.Utils;
 
 import jade.core.AID;
 import jade.core.Agent;
@@ -62,10 +63,10 @@ public class TrafficLightCommanderAgent extends Agent {
 
         public void action () {
             MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.INFORM); 
-            ACLMessage msg = myAgent.receive(mt);               
+            ACLMessage msg = myAgent.receive(mt);     
 
             try {
-                Thread.sleep(5000);
+                Utils.sleep(2000);
 
                 Set<String> trafficLightsKeys = trafficLightsCatalogue.keySet();
                 
@@ -82,7 +83,7 @@ public class TrafficLightCommanderAgent extends Agent {
                     trafficLightsCatalogue.put(element, inverseValue);
                 }
                 
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 System.out.println("Bye!");
                 block();

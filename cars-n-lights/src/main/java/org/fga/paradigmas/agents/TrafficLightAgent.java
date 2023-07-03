@@ -42,14 +42,20 @@ public class TrafficLightAgent extends Agent {
             e.printStackTrace();
         }
         
-        addBehaviour(new TestExampleClass());
+        addBehaviour(new ManageTrafficLight(this.trafficLight));
     }
 
-    private class TestExampleClass extends CyclicBehaviour {
+    private class ManageTrafficLight extends CyclicBehaviour {
 
+        private TrafficLight trafficLight;
         private static final long serialVersionUID = 7L;
         private MessageTemplate mt;
 
+        public ManageTrafficLight(TrafficLight trafficLight) {
+            this.trafficLight = trafficLight;
+        }
+
+        @Override
         public void action () {
             ACLMessage msg = myAgent.receive(mt);
             
@@ -62,11 +68,13 @@ public class TrafficLightAgent extends Agent {
                         case "false":
                             System.out.println("Turning traffic light off!");
                             state = false;
+                            this.trafficLight.setState(state);
                             break;
 
                         case "true":
                             System.out.println("Turning traffic light on!");
                             state = true;
+                            this.trafficLight.setState(state);
                             break;
 
                         default:

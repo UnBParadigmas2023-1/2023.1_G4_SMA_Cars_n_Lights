@@ -20,4 +20,8 @@ public class TrafficLight {
         return this.state;
     }
 
+    public void updateState(boolean newState) {
+        this.state = newState;
+    }
+
 }
