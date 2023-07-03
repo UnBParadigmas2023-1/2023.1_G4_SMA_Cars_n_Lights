@@ -1,13 +1,13 @@
 package org.fga.paradigmas.screens;
 
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import javax.swing.WindowConstants;
+
 import org.fga.paradigmas.builders.CityStreetGraphBuilder;
 import org.fga.paradigmas.components.GraphStreetComponent;
 import org.fga.paradigmas.mocks.NodesMockData;
 import org.fga.paradigmas.models.CityGraph;
-import org.fga.paradigmas.models.Node;
-
-import javax.swing.*;
-import java.awt.*;
 
 public class MainScreen extends JFrame {
 
