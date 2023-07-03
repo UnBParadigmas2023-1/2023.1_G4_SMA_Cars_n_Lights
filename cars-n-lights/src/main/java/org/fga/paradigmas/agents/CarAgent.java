@@ -52,9 +52,6 @@ public class CarAgent extends Agent {
                 if (this.node == null || (!this.node.equals(node))) {
                     this.node = node;
                 }
-            } else {
-                carX = CarsMockData.get(label).getX();
-                carY = CarsMockData.get(label).getY();
             }
 
             if (carX == this.node.getX() && carY == this.node.getY()) {
