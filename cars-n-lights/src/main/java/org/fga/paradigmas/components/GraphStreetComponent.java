@@ -7,11 +7,13 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
+import java.awt.geom.Ellipse2D;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import org.fga.paradigmas.mocks.CarsMockData;
+import org.fga.paradigmas.mocks.TrafficLightsMockData;
 import org.fga.paradigmas.models.CityGraph;
 import org.fga.paradigmas.models.Node;
 
@@ -20,6 +22,7 @@ public class GraphStreetComponent extends JPanel {
     public static final Float STROKE_WIDTH = 50f;
     public static final Integer SQUARE_SIZE = 75;
     public static final Integer LINE_SPACING = 20;
+    private static final Integer ELLIPSE_SIZE = 10;
 
     private Graphics2D g2d;
     private Timer timer;
@@ -44,6 +47,12 @@ public class GraphStreetComponent extends JPanel {
 
         // Desenha o carro
         drawCar();
+
+        // Desenha os semaforos
+        cityGraph.getNodes().forEach(this::drawTrafficLights);
+
+        // Muda a cor dos semaforos
+        changeColor();
 
         // Atualizar a tela
         updateScreen();
@@ -104,6 +113,19 @@ public class GraphStreetComponent extends JPanel {
         });
     }
 
+    private void drawTrafficLights(Node node) {
+        TrafficLightsMockData.getTrafficLights().forEach(tl -> {
+            g2d.setColor(tl.getState() ? Color.GREEN : Color.RED);
+            g2d.fill(new Ellipse2D.Double(tl.getX(), tl.getY(), ELLIPSE_SIZE, ELLIPSE_SIZE));
+        });
+    }
+
+
+    private void updateTrafficLights(Node node, String trafficLightName, Color cor, Integer x, Integer y) {
+        g2d.setColor(cor);
+        g2d.fill(new Ellipse2D.Double(x, y, ELLIPSE_SIZE, ELLIPSE_SIZE));
+    }
+
     private void updateScreen() {
         this.timer = new Timer(100, (listener) -> {
             timer.stop();
@@ -111,5 +133,11 @@ public class GraphStreetComponent extends JPanel {
         });
 
         timer.start();
+    }
+
+    private void changeColor () {
+        TrafficLightsMockData.getTrafficLights().forEach(trafficLight -> {
+            updateTrafficLights(trafficLight.getNode(), trafficLight.getLabel(), trafficLight.getState() ? Color.GREEN : Color.RED, trafficLight.getX(), trafficLight.getY());
+        });
     }
 }
