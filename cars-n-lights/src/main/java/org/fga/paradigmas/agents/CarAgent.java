@@ -10,16 +10,19 @@ import org.fga.paradigmas.utils.Utils;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
 
+import java.util.Arrays;
+
 public class CarAgent extends Agent {
 
-    private final Car car;
+    private Car car;
 
-    public CarAgent() {
-        this.car = CarsMockData.get("C1");
-    }
+    public CarAgent() {}
 
     @Override
     protected void setup() {
+        Object[] args = getArguments();
+        this.car = CarsMockData.get((String) args[0]);
+
         System.out.println("Car Agent");
 
         addBehaviour(new MoveCarBehaviour(car));
@@ -63,9 +66,10 @@ public class CarAgent extends Agent {
 
         @Override
         public boolean done() {
-            if (this.car.getDestinyNode().equals(node)) {
+            if (this.car.getDestinyNode() != null && this.car.getDestinyNode().equals(node)) {
                 Utils.sleep(500);
                 this.car.setX((int) Double.POSITIVE_INFINITY);
+
                 return true;
             }
             return false;

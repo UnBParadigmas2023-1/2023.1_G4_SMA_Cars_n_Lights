@@ -14,9 +14,9 @@ public class CarsMockData {
 
     static {
         CARS.add(new Car("C1", NodesMockData.get("A").getX(), NodesMockData.get("A").getY(), 5, Color.RED, CarDirection.RIGHT, NodesMockData.get("H")));
-//        CARS.add(new Car("C2", NodesMockData.get("B").getQuadrant(QuadrantIdentification.Q2).getX(), NodesMockData.get("B").getQuadrant(QuadrantIdentification.Q2).getY(), 1, Color.RED, null));
-//        CARS.add(new Car("C3", NodesMockData.get("C").getQuadrant(QuadrantIdentification.Q4).getX(), NodesMockData.get("C").getQuadrant(QuadrantIdentification.Q4).getY(), 1, Color.GREEN, null));
-//        CARS.add(new Car("C4", NodesMockData.get("D").getQuadrant(QuadrantIdentification.Q4).getX(), NodesMockData.get("D").getQuadrant(QuadrantIdentification.Q4).getY(), 1, Color.MAGENTA, null));
+        CARS.add(new Car("C2", NodesMockData.get("B").getX(), NodesMockData.get("B").getY(), 5, Color.BLUE, CarDirection.DOWN, NodesMockData.get("A")));
+        CARS.add(new Car("C3", NodesMockData.get("C").getX(), NodesMockData.get("C").getY(), 5, Color.GREEN, CarDirection.RIGHT, NodesMockData.get("G")));
+        CARS.add(new Car("C4", NodesMockData.get("C").getX(), NodesMockData.get("C").getY(), 1, Color.MAGENTA, CarDirection.RIGHT, NodesMockData.get("Z")));
     }
 
     public static Car get(String label) {

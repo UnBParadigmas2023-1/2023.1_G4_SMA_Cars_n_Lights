@@ -26,10 +26,15 @@ public class NodesMockData {
     }
 
     public static Node get(String label) {
-        return NODES.stream()
+        List<Node> nodes = NODES.stream()
                 .filter(node -> node.getLabel().equals(label))
-                .collect(Collectors.toList())
-                .get(0);
+                .collect(Collectors.toList());
+
+        if (!nodes.isEmpty()) {
+            return nodes.get(0);
+        }
+
+        return null;
     }
 
     public static List<Node> getNodes() {
