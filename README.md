@@ -65,7 +65,7 @@ Já os veículos são representados por "quadrados" com cores aleatórias que se
 ## Instalação
 
 **Linguagens**: **Java** <br>
-**Tecnologias**: **JADE**, **Java Swing**, **Maven**, **JDK e JRE**<br>
+**Tecnologias**: **JADE**, **Java Swing**, **Maven**, **JDK versão 17 e JRE**<br>
 
 <!-- Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
 Insira um manual ou um script para auxiliar ainda mais.
@@ -138,15 +138,15 @@ Abaixo, as informações relativas à área e à significância da contribuiçã
 
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto |
 | -- | -- | -- |
-| André Corrêa da Silva           | Participação em andamento. |  Excelente  |
-| Douglas da Silva Monteles       | Participação em andamento. |  Excelente  |
-| Eliseu Kadesh Rosa Assunção Jr. |  Participação em andamento. |  Excelente  |
-| Felipe Candido de Moura         | Participação em andamento.  |  Excelente  |
-| Gabriel Mariano da Silva        |  Participação em andamento. |  Excelente  |
-| João Lucas Pinto Vasconcelos    | Participação em andamento. |  Excelente  |
-| Matheus Pimentel Leal           | Participação em andamento. |  Excelente  |
-| Rafael Fernandes Amancio        | Participação em andamento. |  Excelente  |
-| Victor Eduardo Araújo Ribeiro   | Participação em andamento. |  Excelente  |
+| André Corrêa da Silva           | Participação em andamento. |  Em andamento.  |
+| Douglas da Silva Monteles       | Participação em andamento. |  Em andamento.  |
+| Eliseu Kadesh Rosa Assunção Jr. |  Participação em andamento. |  Em andamento.  |
+| Felipe Candido de Moura         | Desenvolvimento dos Semáforos e Commanders (e suas devidas particularidade) e Documentação  |  Em andamento.  |
+| Gabriel Mariano da Silva        | Desenvolvimento dos Semáforos e Commanders (e suas devidas particularidade) e Documentação |  Em andamento.  |
+| João Lucas Pinto Vasconcelos    | Participação em andamento. |  Em andamento.  |
+| Matheus Pimentel Leal           | Participação em andamento. |  Em andamento.  |
+| Rafael Fernandes Amancio        | Participação em andamento. |  Em andamento.  |
+| Victor Eduardo Araújo Ribeiro   | Participação em andamento. |  Em andamento.  |
 
 ## Outros
 
