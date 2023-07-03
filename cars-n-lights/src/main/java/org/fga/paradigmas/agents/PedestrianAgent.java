@@ -1,4 +1,4 @@
-package org.fga.paradigmas.models;
+package org.fga.paradigmas.agents;
 
 import jade.core.Agent;
 import jade.core.behaviours.*;
@@ -10,8 +10,6 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 public class PedestrianAgent extends Agent {
 
     private static final long serialVersionUID = 1L;
-    // Posição atual do pedestre
-    private Node position;
 
     protected void setup() {
 
