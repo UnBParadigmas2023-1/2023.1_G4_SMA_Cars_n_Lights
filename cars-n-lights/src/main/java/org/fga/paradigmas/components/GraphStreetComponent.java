@@ -1,16 +1,25 @@
 package org.fga.paradigmas.components;
 
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.RenderingHints;
+
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+import org.fga.paradigmas.mocks.CarsMockData;
 import org.fga.paradigmas.models.CityGraph;
 import org.fga.paradigmas.models.Node;
 
-import javax.swing.*;
-import java.awt.*;
-
 public class GraphStreetComponent extends JPanel {
 
-    private static final Float STROKE_WIDTH = 35f;
-    private static final Integer SQUARE_SIZE = 80;
-    private static final Integer LINE_SPACING = 20;
+    public static final Float STROKE_WIDTH = 50f;
+    public static final Integer SQUARE_SIZE = 75;
+    public static final Integer LINE_SPACING = 20;
 
     private Graphics2D g2d;
     private Timer timer;
@@ -33,6 +42,9 @@ public class GraphStreetComponent extends JPanel {
         cityGraph.getGraph().forEach(this::drawConnections);
         cityGraph.getNodes().forEach(this::drawNodes);
 
+        // Desenha o carro
+        drawCar();
+
         // Atualizar a tela
         updateScreen();
     }
@@ -50,7 +62,7 @@ public class GraphStreetComponent extends JPanel {
             // Caso A e B tenham uma conexão
             if (cityGraph.isNeighbor(node, neighbor)) {
                 // linha de ida
-                g2d.drawLine(x1 + LINE_SPACING, y1 + LINE_SPACING, x2 + LINE_SPACING, y2 + LINE_SPACING);
+                g2d.drawLine(x1, y1, x2, y2);
             }
 
             // Caso B e A tenham uma conexão
@@ -69,7 +81,27 @@ public class GraphStreetComponent extends JPanel {
         g2d.fill(new Rectangle(x, y, SQUARE_SIZE, SQUARE_SIZE));
 
         g2d.setColor(Color.WHITE);
-        g2d.drawString(node.getLabel(), x + SQUARE_SIZE/2, y + SQUARE_SIZE/2);
+
+        // Obtém as dimensões do texto
+        FontMetrics fm = g2d.getFontMetrics();
+        int textWidth = fm.stringWidth(node.getLabel());
+        int textHeight = fm.getHeight();
+
+        // Calcula a posição central do texto
+        int textX = x + (SQUARE_SIZE - textWidth) / 2;
+        int textY = y + (SQUARE_SIZE - textHeight) / 2 + fm.getAscent();
+
+        g2d.drawString(node.getLabel(), textX, textY);
+    }
+
+    private void drawCar() {
+        CarsMockData.getCars().forEach(car -> {
+            int x = car.getX() + (SQUARE_SIZE) / 2 - 8;
+            int y = car.getY() + (SQUARE_SIZE) / 2 - 8;
+
+            g2d.setColor(car.getColor());
+            g2d.fill(new Rectangle(x, y, 15, 15));
+        });
     }
 
     private void updateScreen() {
