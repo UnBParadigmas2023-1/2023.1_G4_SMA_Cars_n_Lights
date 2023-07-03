@@ -14,10 +14,20 @@ public class TrafficLight {
     private String label;
     private boolean state;
     private Node node;
+    private Integer x;
+    private Integer y;
 
 
     public boolean getState() {
         return this.state;
+    }
+
+    public Integer getX() {
+        return this.x;
+    }
+
+    public Integer getY() {
+        return this.y;
     }
 
     public void updateState(boolean newState) {
