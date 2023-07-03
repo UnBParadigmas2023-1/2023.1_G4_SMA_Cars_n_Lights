@@ -1,6 +1,6 @@
 PATH_PROJECT_JAR = target/cars-n-lights-1.0-SNAPSHOT.jar
 PROJECT_GROUP    = org.fga.paradigmas
-JADE_AGENTS      = mainAgent:$(PROJECT_GROUP).App; pedestrianAgent:$(PROJECT_GROUP).models.Pedestrian;
+JADE_AGENTS      = mainAgent:$(PROJECT_GROUP).App; pedestrianAgent:$(PROJECT_GROUP).agents.PedestrianAgent;
 JADE_FLAGS 		 = -gui -agents "$(JADE_AGENTS)"
 
 .PHONY:
