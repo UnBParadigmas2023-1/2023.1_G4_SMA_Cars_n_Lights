@@ -1,4 +1,5 @@
 # Cars n' Lights
+
 ### Paradigma Sistema Multiagentes
 
 ---
@@ -21,7 +22,7 @@
 | 19/0036940  |  Rafael Fernandes Amancio |
 | 19/0038926  |  Victor Eduardo Araújo Ribeiro |
 
-## Sobre 
+## Sobre
 
 O presente projeto visa simular o comportamento do trânsito de uma cidade, incluindo **pedestres**, **motoristas**, **semáforos** e **faixas de pedestre**, sendo estes representados enquanto agentes que interagem entre si e com os elementos da cidade.
 
@@ -37,19 +38,22 @@ Em andamento.
 
 <!-- Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento. -->
 
-## Instalação 
+## Instalação
+
 **Linguagens**: **Java** <br>
-**Tecnologias**: **JADE**, **Java Swing**, **Maven**<br>
+**Tecnologias**: **JADE**, **Java Swing**, **Maven**, **JDK e JRE**<br>
 
 <!-- Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
 Insira um manual ou um script para auxiliar ainda mais.
 Gifs animados e outras ilustrações são bem-vindos! -->
 
-## Uso 
+## Uso
+
+Antes de seguir os passos de execução do projeto em sua máquina, garanta que ela possua o [**JDK v17**](https://www.oracle.com/br/java/technologies/downloads/#java17) e o [**JRE**](https://www.java.com/pt-BR/download/manual.jsp) instalados. Caso tenha dúvidas, siga as orientações da subseção **Instalação e Configuração do JDK e JRE** na seção **Outros**.
 
 ### Ambiente Linux
 
-Para a execução do projeto em ambiente, primeiramente clone o repositório em sua máquina: 
+Para a execução do projeto em ambiente, primeiramente clone o repositório em sua máquina:
 
 ```
 git clone git@github.com:UnBParadigmas2023-1/2023.1_G4_SMA_Cars_n_Lights.git
@@ -61,10 +65,30 @@ Logo após, vá para a pasta *cars-n-lights*, onde o projeto está localizado:
 cd 2023.1_G4_SMA_Cars_n_Lights/cars-n-lights/
 ```
 
-Então, com o terminal aberto no diretório em questão, rode o seguinte comando: 
+Então, com o terminal aberto no diretório em questão, rode o seguinte comando:
 
 ```
 make build-and-run
+```
+
+### Ambiente Windows
+
+Após garantir que o **Git** está instalado e configurado em sua máquina *Windows* (caso contrário, instale a partir [DAQUI](https://git-scm.com/download/win)), clone o repositório em sua máquina:
+
+```
+git clone git@github.com:UnBParadigmas2023-1/2023.1_G4_SMA_Cars_n_Lights.git
+```
+
+Logo após, vá para a pasta *cars-n-lights*, onde o projeto está localizado:
+
+```
+cd .\2023.1_G4_SMA_Cars_n_Lights\cars-n-lights\
+```
+
+Agora, é necessário que sua máquina seja capaz de executar os comandos presentes no arquivo [**Makefile**](./cars-n-lights/Makefile). Para tal, siga os passos do seguinte [**TUTORIAL**](https://linuxhint.com/run-makefile-windows/). Uma vez que seu dispositivo é capaz de executar o **Makefile**, siga o comando:
+
+```
+make win-build-and-run
 ```
 
 <!-- Explique como usar seu projeto.
@@ -87,6 +111,7 @@ TEMPO: +/- 15min -->
 ## Participações
 
 ## Participações
+
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
@@ -100,11 +125,11 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Rafael Fernandes Amancio | Participação em andamento. |  Excelente  |
 | Victor Eduardo Araújo Ribeiro | Participação em andamento. |  Excelente  |
 
-## Outros 
+## Outros
 
 ### Lições Aprendidas
 
-Em andamento.
+- Em andamento.
 
 ### Percepções
 
@@ -113,12 +138,11 @@ Em andamento.
 
 ### Contribuições e Fragilidades
 
-Em andamento.
+- Em andamento.
 
 ### Trabalhos Futuros
 
-Em andamento
-
+- Em andamento
 
 <!-- Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
 (i) Lições Aprendidas;
@@ -126,10 +150,20 @@ Em andamento
 (iii) Contribuições e Fragilidades, e
 (iV) Trabalhos Futuros. -->
 
+### Instalação e Configuração do JDK e JRE
+
+Em andamento.
+
+## Troubleshooting
+
+Em andamento.
+
 ## Fontes
 
-* **JADE - JAVA Agent Development Framework**. Disponível em: <https://jade.tilab.com/>;
-* Em andamento.
+- **JADE - JAVA Agent Development Framework**. Disponível em: <https://jade.tilab.com/>;
+- **How to Run a Makefile in Windows**. Disponível em: <https://linuxhint.com/run-makefile-windows/>;
+- **JADE API Documentation**. Disponível em: <https://jade.tilab.com/doc/api/index.html>;
+- Em andamento.
 
 <!-- Referencie, adequadamente, as referências utilizadas.
 Indique ainda sobre fontes de leitura complementares. -->
