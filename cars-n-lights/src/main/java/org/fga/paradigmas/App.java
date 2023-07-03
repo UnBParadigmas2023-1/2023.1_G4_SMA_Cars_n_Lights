@@ -2,6 +2,7 @@ package org.fga.paradigmas;
 
 import org.fga.paradigmas.mocks.CarsMockData;
 import org.fga.paradigmas.mocks.CommandersMockData;
+import org.fga.paradigmas.mocks.CrosswalkMockData;
 import org.fga.paradigmas.mocks.TrafficLightsMockData;
 import org.fga.paradigmas.screens.MainScreen;
 
@@ -51,6 +52,19 @@ public class App extends Agent {
                 Object[] args = {commander.getLabel()};
                 // Criar o agente secundário dentro do container
                 AgentController agentController = getContainerController().createNewAgent(commander.getLabel(), "org.fga.paradigmas.agents.TrafficLightCommanderAgent", args);
+
+                // Iniciar o agente secundário
+                agentController.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        CrosswalkMockData.getCrosswalks().forEach(cw -> {
+            try {
+                Object[] args = {cw.getLabel()};
+                // Criar o agente secundário dentro do container
+                AgentController agentController = getContainerController().createNewAgent(cw.getLabel(), "org.fga.paradigmas.agents.CrosswalkAgent", args);
 
                 // Iniciar o agente secundário
                 agentController.start();

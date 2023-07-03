@@ -1,50 +1,78 @@
 package org.fga.paradigmas.agents;
 
+import org.fga.paradigmas.mocks.CrosswalkMockData;
+import org.fga.paradigmas.models.Crosswalk;
+
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
-import jade.lang.acl.ACLMessage;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.lang.acl.MessageTemplate;
 
 public class CrosswalkAgent extends Agent {
 
-    private boolean isSemaphoreOpen = false;
+    private Crosswalk crosswalk;
+    
+    public CrosswalkAgent() {}
+
+    private static final long serialVersionUID = 1L;
+    private static boolean state = false;
 
     @Override
     protected void setup() {
-        System.out.println("Crosswalk Agent");
+        Object[] args = getArguments();
+        this.crosswalk = CrosswalkMockData.get((String) args[0]);
 
-        addBehaviour(new CrosswalkBehaviour());
+        DFAgentDescription agentDesc = new DFAgentDescription();
+        agentDesc.setName(getAID());
+
+        ServiceDescription svcDesc = new ServiceDescription();
+        svcDesc.setType("crosswalk");
+        svcDesc.setName(this.crosswalk.getLabel());
+
+        agentDesc.addServices(svcDesc);
+
+        try {
+            DFService.register(this, agentDesc);
+        } catch (FIPAException e) {
+            e.printStackTrace();
+        }
+        
+        addBehaviour(new ManageCrosswalk(this.crosswalk));
     }
 
-    private class CrosswalkBehaviour extends CyclicBehaviour {
+    private class ManageCrosswalk extends CyclicBehaviour {
+
+        private Crosswalk crosswalk;
+        private static final long serialVersionUID = 1L;
+        private MessageTemplate mt;
+
+        public ManageCrosswalk(Crosswalk crosswalk) {
+            this.crosswalk = crosswalk;
+        }
 
         @Override
-        public void action() {
-            ACLMessage msg = receive();
+        public void action () {
+            
+            this.crosswalk.setState(!this.crosswalk.getTrafficLight().getState());
 
-            if (msg != null) {
-                String content = msg.getContent();
+            state = !this.crosswalk.getTrafficLight().getState();
+            
+            System.out.println("Estado da faixa: " + state);
 
-                if (msg.getConversationId().equals("semaphore-status")) {
-                    // Atualiza o estado do semáforo
-                    isSemaphoreOpen = content.equals("open");
-                    System.out.println("Crosswalk: Semaphore status updated. Open: " + isSemaphoreOpen);
-                } else if (msg.getConversationId().equals("pedestrian-request")) {
-                    // Verifica se o semáforo está aberto e envia uma resposta ao pedestre
-                    ACLMessage reply = msg.createReply();
-                    reply.setPerformative(ACLMessage.INFORM);
-
-                    if (isSemaphoreOpen) {
-                        reply.setContent("You can cross the crosswalk");
-                    } else {
-                        reply.setContent("Wait for the semaphore to open");
-                    }
-
-                    send(reply);
-                }
-            } else {
-                block();
-            }
         }
+    }
+
+    protected void takeDown () {
+        try {
+            DFService.deregister(this);
+        } catch (FIPAException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Crosswalk "+getAID().getName()+" is down!");
     }
 }
 
