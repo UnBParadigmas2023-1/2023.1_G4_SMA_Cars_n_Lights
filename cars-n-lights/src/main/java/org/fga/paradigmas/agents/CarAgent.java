@@ -1,7 +1,5 @@
 package org.fga.paradigmas.agents;
 
-import jade.core.Agent;
-import jade.core.behaviours.Behaviour;
 import org.fga.paradigmas.mocks.CarsMockData;
 import org.fga.paradigmas.mocks.NodesMockData;
 import org.fga.paradigmas.models.Car;
@@ -9,8 +7,8 @@ import org.fga.paradigmas.models.CarDirection;
 import org.fga.paradigmas.models.Node;
 import org.fga.paradigmas.utils.Utils;
 
-import java.util.List;
-import java.util.Random;
+import jade.core.Agent;
+import jade.core.behaviours.Behaviour;
 
 public class CarAgent extends Agent {
 
@@ -29,7 +27,8 @@ public class CarAgent extends Agent {
 
     private static class MoveCarBehaviour extends Behaviour {
 
-        private final Car car;
+        private Car car;
+        private Node node = null;
 
         public MoveCarBehaviour(Car car) {
             this.car = car;
@@ -37,27 +36,24 @@ public class CarAgent extends Agent {
 
         @Override
         public void action() {
-
             // Atualiza a posição do carro
             int carX = car.getX();
             int carY = car.getY();
 
-            double diffx = Math.abs(((double) carX - (double) NodesMockData.get(car.getDestiny()).getX())
-                    / ((double) carX + (double) NodesMockData.get(car.getDestiny()).getX())),
-                    diffy = Math.abs(((double) carY - (double) NodesMockData.get(car.getDestiny()).getY())
-                            / ((double) carY + (double) NodesMockData.get(car.getDestiny()).getY()));
-            System.out.println("Executando o agente X: " + carX + " Y: " + carY + " Diffx: " + diffx);
-            if (diffx < 0.01 && diffy < 0.01) {
-                List<Node> nodes = NodesMockData.getNodes();
-                nodes.remove(NodesMockData.get(car.getOrigin()));
-                Random rand = new Random();
+            System.out.println("Car(x,y) = (" + carX + ", " + carY + ")");
+            Node node = NodesMockData.getNodeByCoordinates(carX, carY);
 
-                Node newDestiny = nodes.get(rand.nextInt(nodes.size()));
-                // car.setOrigin(car.getDestiny());
-                // car.setDestiny(newDestiny.getLabel());
-                // car.setX(NodesMockData.get("D").getX());
-                // car.setY(NodesMockData.get("D").getY());
-                car.updateCarPosition(car.getSpeed(), CarDirection.DOWN);
+            if (node != null) {
+                if (this.node == null || (!this.node.equals(node))) {
+                    this.node = node;
+                }
+            }
+
+            if (carX == this.node.getX() && carY == this.node.getY()) {
+                CarDirection direction = this.node.getCarRandomDirection(car.getCarDirection());
+
+                car.updateCarPosition(car.getSpeed(), direction);
+                System.out.println("Carro indo para: " + direction);
             } else {
                 car.updateCarPosition(car.getSpeed(), CarDirection.KEEP);
             }
@@ -67,7 +63,11 @@ public class CarAgent extends Agent {
 
         @Override
         public boolean done() {
-            // Condição de termino
+            if (this.car.getDestinyNode().equals(node)) {
+                Utils.sleep(500);
+                this.car.setX((int) Double.POSITIVE_INFINITY);
+                return true;
+            }
             return false;
         }
     }

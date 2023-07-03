@@ -22,7 +22,7 @@ public class MainScreen extends JFrame {
     }
 
     private void initMainScreen() {
-        CityStreetGraphBuilder graphBuilder = new CityStreetGraphBuilder(true);
+        CityStreetGraphBuilder graphBuilder = new CityStreetGraphBuilder(false);
 
         CityGraph cityGraph = graphBuilder
                 .addStreetNodes(NodesMockData.getNodes())

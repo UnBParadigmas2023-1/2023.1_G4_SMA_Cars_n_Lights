@@ -1,10 +1,14 @@
 package org.fga.paradigmas.models;
 
+import java.util.List;
+
+import org.fga.paradigmas.components.GraphStreetComponent;
+import org.fga.paradigmas.utils.Utils;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.fga.paradigmas.components.GraphStreetComponent;
 
 @Data
 @AllArgsConstructor
@@ -15,7 +19,7 @@ public class Node {
     private String label;
     private Integer x;
     private Integer y;
-    // private CarDirection dir;
+    private List<CarDirection> carDirections;
 
     public Quadrant getQuadrant(QuadrantIdentification identification) {
         int x = 0, y = 0;
@@ -49,6 +53,36 @@ public class Node {
         }
 
         return new Quadrant(identification, x, y);
+    }
+
+    public CarDirection getCarRandomDirection(CarDirection carDirection) {
+        int randomIndex = Utils.getIntRandom(carDirections.size());
+        CarDirection carDirectionAux = null;
+        CarDirection randomDirection = carDirections.get(randomIndex);
+
+        switch (carDirection) {
+            case UP:
+                if (randomDirection != CarDirection.DOWN)
+                    carDirectionAux = randomDirection;
+                break;
+            case DOWN:
+                if (randomDirection != CarDirection.UP)
+                    carDirectionAux = randomDirection;
+                break;
+            case RIGHT:
+                if (randomDirection != CarDirection.LEFT)
+                    carDirectionAux = randomDirection;
+                break;
+            case LEFT:
+                if (randomDirection != CarDirection.RIGHT)
+                    carDirectionAux = randomDirection;
+                break;
+        }
+
+        if (carDirectionAux != null)
+            return carDirectionAux;
+
+        return getCarRandomDirection(carDirection);
     }
 
 }

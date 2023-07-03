@@ -17,7 +17,7 @@ import org.fga.paradigmas.models.Node;
 
 public class GraphStreetComponent extends JPanel {
 
-    public static final Float STROKE_WIDTH = 35f;
+    public static final Float STROKE_WIDTH = 50f;
     public static final Integer SQUARE_SIZE = 75;
     public static final Integer LINE_SPACING = 20;
 
@@ -62,7 +62,7 @@ public class GraphStreetComponent extends JPanel {
             // Caso A e B tenham uma conexão
             if (cityGraph.isNeighbor(node, neighbor)) {
                 // linha de ida
-                g2d.drawLine(x1 + LINE_SPACING, y1 + LINE_SPACING, x2 + LINE_SPACING, y2 + LINE_SPACING);
+                g2d.drawLine(x1, y1, x2, y2);
             }
 
             // Caso B e A tenham uma conexão
@@ -96,7 +96,8 @@ public class GraphStreetComponent extends JPanel {
 
     private void drawCar() {
         CarsMockData.getCars().forEach(car -> {
-            int x = car.getX(), y = car.getY();
+            int x = car.getX() + (SQUARE_SIZE) / 2 - 8;
+            int y = car.getY() + (SQUARE_SIZE) / 2 - 8;
 
             g2d.setColor(car.getColor());
             g2d.fill(new Rectangle(x, y, 15, 15));

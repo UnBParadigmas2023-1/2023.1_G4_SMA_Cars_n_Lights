@@ -19,8 +19,7 @@ public class Car {
     private Integer speed;
     private Color color;
     private CarDirection carDirection;
-    private String origin;
-    private String destiny;
+    private Node destinyNode;
 
     public void updateCarPosition(int speed, CarDirection carDirection) {
         if (carDirection != CarDirection.KEEP) {
