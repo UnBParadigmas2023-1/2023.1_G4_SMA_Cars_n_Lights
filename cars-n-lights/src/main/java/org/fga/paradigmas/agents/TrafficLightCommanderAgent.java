@@ -66,7 +66,7 @@ public class TrafficLightCommanderAgent extends Agent {
             ACLMessage msg = myAgent.receive(mt);     
 
             try {
-                Utils.sleep(2000);
+                Utils.sleep(5000);
 
                 Set<String> trafficLightsKeys = trafficLightsCatalogue.keySet();
                 

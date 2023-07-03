@@ -60,29 +60,31 @@ public class Node {
         CarDirection carDirectionAux = null;
         CarDirection randomDirection = carDirections.get(randomIndex);
 
-        switch (carDirection) {
-            case UP:
-                if (randomDirection != CarDirection.DOWN)
-                    carDirectionAux = randomDirection;
-                break;
-            case DOWN:
-                if (randomDirection != CarDirection.UP)
-                    carDirectionAux = randomDirection;
-                break;
-            case RIGHT:
-                if (randomDirection != CarDirection.LEFT)
-                    carDirectionAux = randomDirection;
-                break;
-            case LEFT:
-                if (randomDirection != CarDirection.RIGHT)
-                    carDirectionAux = randomDirection;
-                break;
-        }
+        return randomDirection;
 
-        if (carDirectionAux != null)
-            return carDirectionAux;
-
-        return getCarRandomDirection(carDirection);
+//        switch (carDirection) {
+//            case UP:
+//                if (randomDirection != CarDirection.DOWN)
+//                    carDirectionAux = randomDirection;
+//                break;
+//            case DOWN:
+//                if (randomDirection != CarDirection.UP)
+//                    carDirectionAux = randomDirection;
+//                break;
+//            case RIGHT:
+//                if (randomDirection != CarDirection.LEFT)
+//                    carDirectionAux = randomDirection;
+//                break;
+//            case LEFT:
+//                if (randomDirection != CarDirection.RIGHT)
+//                    carDirectionAux = randomDirection;
+//                break;
+//        }
+//
+//        if (carDirectionAux != null)
+//            return carDirectionAux;
+//
+//        return getCarRandomDirection(carDirection);
     }
 
 }
