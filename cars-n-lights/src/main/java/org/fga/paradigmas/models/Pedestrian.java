@@ -49,7 +49,7 @@ public class Pedestrian{
         this.setPosX(this.posX-=speed);
       default:
         // Default case, don't to nothing
-        System.out.println('Pedestrian waiting to move.');
+        System.out.println("Pedestrian waiting to move.");
     }
   }
 }
