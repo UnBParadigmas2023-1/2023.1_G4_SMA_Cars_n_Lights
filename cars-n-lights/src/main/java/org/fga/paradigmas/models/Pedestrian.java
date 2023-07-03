@@ -1,4 +1,4 @@
 package org.fga.paradigmas.models;
 
-public class Pedestrian {
+public class Pedestrian{
 }
