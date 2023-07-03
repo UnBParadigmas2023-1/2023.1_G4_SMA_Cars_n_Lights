@@ -1,6 +1,5 @@
 package org.fga.paradigmas.models;
 
-import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.domain.DFService;
@@ -61,7 +60,6 @@ public class TrafficLights extends Agent {
                             break;
 
                         default:
-                            System.out.println("Invalid option!");
                     }
     
                 }
