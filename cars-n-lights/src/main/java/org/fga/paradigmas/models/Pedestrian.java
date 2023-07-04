@@ -2,13 +2,15 @@ package org.fga.paradigmas.models;
 
 import java.awt.Color;
 
-enum Direction {
-  UP,
-  DOWN,
-  RIGHT,
-  LEFT
-}
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(of = { "label" })
 public class Pedestrian{
   // Posição atual do pedestre
   private Integer posX;
@@ -16,7 +18,7 @@ public class Pedestrian{
   private String label;
   private Integer speed;
   private Color color;
-  private Direction direction;
+  private CarDirection direction;
 
   // Getters e Setters
   private void setPosX(Integer posX) {
@@ -33,7 +35,28 @@ public class Pedestrian{
     return this.posY;
   }
 
-  public void updatePosition(int speed, Direction direction) {
+  private void setLabel(String label) {
+    this.label = label;
+  }
+  public String getLabel() {
+    return this.label;
+  }
+
+  private void setSpeed(Integer speed) {
+    this.speed = speed;
+  }
+  private Integer getSpeed() {
+    return this.speed;
+  }
+
+  private void setColor(Color color) {
+    this.color = color;
+  }
+  public Color getColor() {
+    return this.color;
+  }
+
+  public void updatePosition(int speed, CarDirection direction) {
     switch (this.direction) {
       case UP:
         // Go upwards
@@ -49,7 +72,7 @@ public class Pedestrian{
         this.setPosX(this.posX-=speed);
       default:
         // Default case, don't to nothing
-        System.out.println('Pedestrian waiting to move.');
+        System.out.println("Pedestrian waiting to move.");
     }
   }
 }
