@@ -66,7 +66,7 @@ public class TrafficLightCommanderAgent extends Agent {
             ACLMessage msg = myAgent.receive(mt);     
 
             try {
-                Utils.sleep(2000);
+                Utils.sleep(4000);
 
                 Set<String> trafficLightsKeys = trafficLightsCatalogue.keySet();
                 
@@ -94,7 +94,7 @@ public class TrafficLightCommanderAgent extends Agent {
     public void addTrafficLightsToCatalogue(final String name, final boolean state) {
         addBehaviour(new OneShotBehaviour() {
            private static final long serialVersionUID = 7L;
-           
+
            public void action () {
             trafficLightsCatalogue.put(name, state);
             System.out.println(name + " added to commander!");
