@@ -1,5 +1,7 @@
 package org.fga.paradigmas.agents;
 
+import org.fga.paradigmas.models.Pedestrian;
+
 import jade.core.Agent;
 import jade.core.behaviours.*;
 import jade.domain.DFService;
@@ -10,6 +12,7 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 public class PedestrianAgent extends Agent {
 
     private static final long serialVersionUID = 1L;
+    private Pedestrian pedestrian;
 
     protected void setup() {
 
