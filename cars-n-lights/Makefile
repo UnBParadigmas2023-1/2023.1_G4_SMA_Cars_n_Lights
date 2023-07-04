@@ -25,12 +25,8 @@ clean:
 
 build-and-run-win:
 	@echo "Gerando a build e executando o projeto"
-	make clean-win build-win run
+	make build-win run
 
 build-win:
 	@echo "Gerando a build do projeto"
 	.\mvnw clean install
-
-clean-win:
-	@echo "Removendo a build do projeto"
-	.\mvnw clean
