@@ -137,7 +137,8 @@ Nessa seção, deve-se revelar de forma clara sobre o funcionamento do software.
 
 ## Vídeo
 
-[Vídeo da Apresentação do Projeto](https://unbbr.sharepoint.com/:v:/s/ParadigmasGrupo04/EV2s2fx8cgFEjuGZJEHjenMBDUcMKaYzQuUuFOtRNoo0hA?e=bXXjvI)
+**Apresentação no Microsoft Stream**: [Vídeo da Apresentação do Projeto](https://unbbr.sharepoint.com/:v:/s/ParadigmasGrupo04/EV2s2fx8cgFEjuGZJEHjenMBDUcMKaYzQuUuFOtRNoo0hA?e=bXXjvI)
+**Apresentação no YouTube**: [Vídeo de Apresentação do Projeto](https://youtu.be/WqVpf5jzzgM)
 
 <!-- Adicione 1 ou mais vídeos com a execução do projeto.
 Procure: 
