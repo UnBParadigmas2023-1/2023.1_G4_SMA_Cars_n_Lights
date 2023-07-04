@@ -13,12 +13,12 @@ public class CarsMockData {
     private static final List<Car> CARS = new ArrayList<>();
 
     static {
-        CARS.add(new Car("C1", NodesMockData.get("A").getX(), NodesMockData.get("A").getY(), 5, Color.RED, CarDirection.RIGHT, NodesMockData.get("H")));
+        CARS.add(new Car("C1", NodesMockData.get("A").getX(), NodesMockData.get("A").getY(), 1, Color.RED, CarDirection.RIGHT, NodesMockData.get("Z")));
         CARS.add(new Car("C2", NodesMockData.get("B").getX(), NodesMockData.get("B").getY(), 5, Color.BLUE, CarDirection.DOWN, NodesMockData.get("Z")));
-        CARS.add(new Car("C3", NodesMockData.get("C").getX(), NodesMockData.get("C").getY(), 5, Color.GREEN, CarDirection.RIGHT, NodesMockData.get("Z")));
-        CARS.add(new Car("C4", NodesMockData.get("C").getX(), NodesMockData.get("C").getY(), 5, Color.MAGENTA, CarDirection.RIGHT, NodesMockData.get("Z")));
-        CARS.add(new Car("C5", NodesMockData.get("G").getX(), NodesMockData.get("G").getY(), 5, Color.MAGENTA, CarDirection.RIGHT, NodesMockData.get("Z")));
-        CARS.add(new Car("C6", NodesMockData.get("H").getX(), NodesMockData.get("H").getY(), 5, Color.MAGENTA, CarDirection.RIGHT, NodesMockData.get("Z")));
+        CARS.add(new Car("C3", NodesMockData.get("C").getX(), NodesMockData.get("C").getY(), 1, Color.GREEN, CarDirection.RIGHT, NodesMockData.get("Z")));
+        CARS.add(new Car("C4", NodesMockData.get("C").getX(), NodesMockData.get("C").getY(), 5, Color.PINK, CarDirection.RIGHT, NodesMockData.get("Z")));
+        CARS.add(new Car("C5", NodesMockData.get("G").getX(), NodesMockData.get("G").getY(), 2, Color.MAGENTA, CarDirection.RIGHT, NodesMockData.get("Z")));
+        CARS.add(new Car("C6", NodesMockData.get("H").getX(), NodesMockData.get("H").getY(), 5, Color.CYAN, CarDirection.RIGHT, NodesMockData.get("Z")));
     }
 
     public static Car get(String label) {

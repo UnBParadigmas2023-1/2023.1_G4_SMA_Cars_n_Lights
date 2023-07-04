@@ -57,10 +57,7 @@ public class Node {
 
     public CarDirection getCarRandomDirection(CarDirection carDirection) {
         int randomIndex = Utils.getIntRandom(carDirections.size());
-        CarDirection carDirectionAux = null;
-        CarDirection randomDirection = carDirections.get(randomIndex);
-
-        return randomDirection;
+        return carDirections.get(randomIndex);
 
 //        switch (carDirection) {
 //            case UP:

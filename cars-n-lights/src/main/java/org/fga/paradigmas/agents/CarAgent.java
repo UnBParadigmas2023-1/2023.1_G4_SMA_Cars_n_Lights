@@ -6,10 +6,14 @@ import jade.core.behaviours.Behaviour;
 import jade.lang.acl.ACLMessage;
 import org.fga.paradigmas.mocks.CarsMockData;
 import org.fga.paradigmas.mocks.NodesMockData;
+import org.fga.paradigmas.mocks.TrafficLightsMockData;
 import org.fga.paradigmas.models.Car;
 import org.fga.paradigmas.models.CarDirection;
 import org.fga.paradigmas.models.Node;
+import org.fga.paradigmas.models.TrafficLight;
 import org.fga.paradigmas.utils.Utils;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class CarAgent extends Agent {
 
@@ -58,9 +62,47 @@ public class CarAgent extends Agent {
                 CarDirection direction = this.node.getCarRandomDirection(car.getCarDirection());
 
                 car.updateCarPosition(car.getSpeed(), direction);
-                System.out.println("Carro: " + car.getLabel() + " indo para: " + direction);
+                // System.out.println("Carro: " + car.getLabel() + " indo para: " + direction);
             } else {
-                car.updateCarPosition(car.getSpeed(), CarDirection.KEEP);
+                AtomicBoolean flag = new AtomicBoolean(false);
+
+                for (TrafficLight it : TrafficLightsMockData.getTrafficLights()) {
+                    int tx = 0, ty = 0;
+
+                    switch (car.getCarDirection()) {
+                        case UP:
+                            tx = it.getX() - 35;
+                            ty = it.getY() - 15;
+                            break;
+                        case DOWN:
+                            tx = it.getX() - 35;
+                            ty = it.getY() - 45;
+                            break;
+                        case LEFT:
+                            tx = it.getX() - 15;
+                            ty = it.getY() - 35;
+                            break;
+                        case RIGHT:
+                            tx = it.getX() - 45;
+                            ty = it.getY() - 35;
+                            break;
+                    }
+
+                    // System.out.println("T(x,y) = (" + tx + ", " + ty + ")");
+
+                    int dist = Utils.calcDist(carX, carY, tx, ty);
+
+                    System.out.println("Distancia de: " + it.getNode().getLabel() + " (x,y) = (" + it.getX() + ", " + it.getY() + ") = " + dist);
+
+                    if (dist < 10 && !it.getState()) {
+                        car.updateCarPosition(0, CarDirection.KEEP);
+                        flag.set(true);
+                        break;
+                    }
+                }
+
+                if (!flag.get())
+                    car.updateCarPosition(car.getSpeed(), CarDirection.KEEP);
             }
 
             Utils.sleep(100);
