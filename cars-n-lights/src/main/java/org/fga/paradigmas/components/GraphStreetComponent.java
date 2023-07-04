@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import org.fga.paradigmas.mocks.CarsMockData;
+import org.fga.paradigmas.mocks.CrosswalkMockData;
 import org.fga.paradigmas.mocks.TrafficLightsMockData;
 import org.fga.paradigmas.models.CityGraph;
 import org.fga.paradigmas.models.Node;
@@ -23,6 +24,7 @@ public class GraphStreetComponent extends JPanel {
     public static final Integer SQUARE_SIZE = 75;
     public static final Integer LINE_SPACING = 20;
     private static final Integer ELLIPSE_SIZE = 10;
+    private static final Integer RECTANGLE_SIZE = 55;
 
     private Graphics2D g2d;
     private Timer timer;
@@ -53,6 +55,12 @@ public class GraphStreetComponent extends JPanel {
 
         // Muda a cor dos semaforos
         changeColor();
+
+        // Adiciona a faixa de pedestre
+        CrosswalkMockData.getCrosswalks().forEach(cw -> {
+            drawCrosswalks(cw.getNode());
+        });
+        // drawCrosswalks(CrosswalkMockData.get("crosswalkE").getNode());
 
         // Atualizar a tela
         updateScreen();
@@ -117,6 +125,13 @@ public class GraphStreetComponent extends JPanel {
         TrafficLightsMockData.getTrafficLights().forEach(tl -> {
             g2d.setColor(tl.getState() ? Color.GREEN : Color.RED);
             g2d.fill(new Ellipse2D.Double(tl.getX(), tl.getY(), ELLIPSE_SIZE, ELLIPSE_SIZE));
+        });
+    }
+
+    private void drawCrosswalks(Node node) {
+        CrosswalkMockData.getCrosswalks().forEach(cw -> {
+            g2d.setColor(Color.LIGHT_GRAY);
+            g2d.fill(new Rectangle(cw.getX(), cw.getY(), RECTANGLE_SIZE, LINE_SPACING));
         });
     }
 

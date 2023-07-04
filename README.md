@@ -138,20 +138,21 @@ Abaixo, as informações relativas à área e à significância da contribuiçã
 
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto |
 | -- | -- | -- |
-| André Corrêa da Silva           | Participação em andamento. |  Em andamento.  |
-| Douglas da Silva Monteles       | Participação em andamento. |  Em andamento.  |
-| Eliseu Kadesh Rosa Assunção Jr. |  Participação em andamento. |  Em andamento.  |
-| Felipe Candido de Moura         | Desenvolvimento dos Semáforos e Commanders (e suas devidas particularidade) e Documentação  |  Em andamento.  |
-| Gabriel Mariano da Silva        | Desenvolvimento dos Semáforos e Commanders (e suas devidas particularidade) e Documentação |  Em andamento.  |
-| João Lucas Pinto Vasconcelos    | Participação em andamento. |  Em andamento.  |
-| Matheus Pimentel Leal           | Participação em andamento. |  Em andamento.  |
-| Rafael Fernandes Amancio        | Participação em andamento. |  Em andamento.  |
-| Victor Eduardo Araújo Ribeiro   | Participação em andamento. |  Em andamento.  |
+| André Corrêa da Silva | Desenvolvimento do *CarAgent* (e suas devidas particularidades) e Documentação |  Em andamento.  |
+| Douglas da Silva Monteles | Desenvolvimento do *CarAgent*, dos Grafos, da Interface (Mapa e Carros) e da Estrutura Geral do Projeto. |  Em andamento.  |
+| Eliseu Kadesh Rosa Assunção Jr. |  Desenvolvimento do Pedestre (e suas devidas particularidades) |  Em andamento.  |
+| Felipe Candido de Moura | Desenvolvimento dos Semáforos e Commanders (e suas devidas particularidades) e Documentação  |  Em andamento.  |
+| Gabriel Mariano da Silva | Desenvolvimento dos Semáforos e Commanders (e suas devidas particularidades) e Documentação |  Em andamento.  |
+| João Lucas Pinto Vasconcelos | Desenvolvimento do *CarAgent*, dos Grafos (e suas particularidades) |  Em andamento.  |
+| Matheus Pimentel Leal | Desenvolvimento do Pedestre (e suas devidas particularidades) |  Em andamento.  |
+| Rafael Fernandes Amancio | Desenvolvimento da Faixa de Pedestre (e suas devidas particularidades) |  Em andamento.  |
+| Victor Eduardo Araújo Ribeiro | Desenvolvimento da Faixa de Pedestre (e suas devidas particularidades) |  Em andamento.  |
 
 ## Outros
 
 ### Lições Aprendidas
 
+-
 - Em andamento.
 
 ### Percepções
@@ -161,10 +162,12 @@ Abaixo, as informações relativas à área e à significância da contribuiçã
 
 ### Contribuições e Fragilidades
 
+-
 - Em andamento.
 
 ### Trabalhos Futuros
 
+-
 - Em andamento
 
 <!-- Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
