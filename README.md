@@ -36,13 +36,17 @@ Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no 
 
 ### Projeto
 
-![Interface do Projeto](./assets/legenda_semaforos.jpg)
+![Interface do projeto](https://github.com/UnBParadigmas2023-1/2023.1_G4_SMA_Cars_n_Lights/assets/54580766/38aebf51-ce8f-467f-8031-32fab3d59247)
 
 Acima, uma imagem apresentando a interface do projeto, onde é possível ver as vias, que se cruzam e formam os cruzamentos. Nos cruzamentos estão dispostos os semáforos, que visualmente são "círculos" que podem adotar a coloração vermelha (quando fechado) ou verde (quando aberto). Os veículos são representados por "quadrados" com cores aleatórias que se movem pelas vias e respeitam os semáforos.
 
-![Interface do Projeto](./assets/legenda_semaforos.jpg)
+![image](https://github.com/UnBParadigmas2023-1/2023.1_G4_SMA_Cars_n_Lights/assets/54580766/058ba55a-f3d3-4a35-83c2-802bcf8cebc6)
 
-*Acima, uma imagem apresentando a interface do projeto.*
+Na imagem acima está representado um esboço inicial que demonstra os possíveis caminhos que os carros tomarão.
+
+![Agentes Jade](https://github.com/UnBParadigmas2023-1/2023.1_G4_SMA_Cars_n_Lights/assets/54580766/fa622f48-41e9-4741-816d-f3adafdffa5a)
+
+*Acima, uma imagem demonstrando os agentes Jade que estão sendo executados*
 
 ### Semáforos e *Commanders*
 
@@ -73,7 +77,7 @@ Já os veículos são representados por "quadrados" com cores aleatórias que se
 ## Instalação
 
 **Linguagens**: **Java** <br>
-**Tecnologias**: **JADE**, **Java Swing**, **Maven**, **JDK versão 17 e JRE**<br>
+**Tecnologias**: **JADE**, **Java Swing**, **Maven**, **MavenWrapper**, **JDK versão 17 e JRE**<br>
 
 <!-- Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
 Insira um manual ou um script para auxiliar ainda mais.
@@ -103,6 +107,8 @@ Então, com o terminal aberto no diretório em questão, rode o seguinte comando
 make build-and-run
 ```
 
+![image](https://github.com/UnBParadigmas2023-1/2023.1_G4_SMA_Cars_n_Lights/assets/54580766/8443698a-b722-4df1-9e2e-bcf604878716)
+
 ### Ambiente Windows
 
 Após garantir que o **Git** está instalado e configurado em sua máquina *Windows* (caso contrário, instale a partir [DAQUI](https://git-scm.com/download/win)), clone o repositório em sua máquina:
@@ -122,6 +128,8 @@ Agora, é necessário que sua máquina seja capaz de executar os comandos presen
 ```
 make build-and-run-win
 ```
+
+![image](https://github.com/UnBParadigmas2023-1/2023.1_G4_SMA_Cars_n_Lights/assets/78980992/5d55df23-ac9e-4a2c-9979-5ef01388f9b9)
 
 <!-- Explique como usar seu projeto.
 Procure ilustrar em passos, com apoio de telas do software, seja com base na interface gráfica, seja com base no terminal.
@@ -147,14 +155,14 @@ Abaixo, as informações relativas à área e à significância da contribuiçã
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto |
 | -- | -- | -- |
 | André Corrêa da Silva | Desenvolvimento do *CarAgent* (e suas devidas particularidades) e Documentação |  Excelente.  |
-| Douglas da Silva Monteles | Desenvolvimento do *CarAgent*, dos Grafos, da Interface (Mapa e Carros) e da Estrutura Geral do Projeto. |  Excelente.  |
+| Douglas da Silva Monteles | Desenvolvimento do *CarAgent*, dos Grafos, da Interface (Mapa e Carros), da Estrutura Geral do Projeto e Documentação. |  Excelente.  |
 | Eliseu Kadesh Rosa Assunção Jr. |  Desenvolvimento do Pedestre (e suas devidas particularidades) |  Excelente.  |
 | Felipe Candido de Moura | Desenvolvimento dos Semáforos e Commanders (e suas devidas particularidades) e Documentação  |  Excelente.  |
 | Gabriel Mariano da Silva | Desenvolvimento dos Semáforos e Commanders (e suas devidas particularidades) e Documentação |  Excelente.  |
-| João Lucas Pinto Vasconcelos | Desenvolvimento do *CarAgent*, dos Grafos (e suas particularidades) |  Excelente.  |
+| João Lucas Pinto Vasconcelos | Desenvolvimento do *CarAgent*, dos Grafos (e suas particularidades) e Documentação |  Excelente.  |
 | Matheus Pimentel Leal | Desenvolvimento do Pedestre (e suas devidas particularidades) |  Excelente.  |
 | Rafael Fernandes Amancio | Desenvolvimento da Faixa de Pedestre (e suas devidas particularidades) |  Excelente.  |
-| Victor Eduardo Araújo Ribeiro | Desenvolvimento da Faixa de Pedestre (e suas devidas particularidades) |  ---  |
+| Victor Eduardo Araújo Ribeiro | Desenvolvimento da Faixa de Pedestre (e suas devidas particularidades) |  Nula.  |
 
 ## Outros
 
@@ -192,6 +200,11 @@ Abaixo, as informações relativas à área e à significância da contribuiçã
 
 Ter o **Java Development Kit (JDK ou OpenJDK versão 17)** e o **Java Runtime Environment (JRE)** instalados em sua máquina é essencial para a execução do projeto. Para tal, siga os tutoriais de instalação dos *softwares* em questão para cada sistema operacional no qual se deseja executar o projeto.
 
+### Dependências do projeto
+
+- Jade: <https://mvnrepository.com/artifact/net.sf.ingenias/jade>
+- Lombok: <https://mvnrepository.com/artifact/org.projectlombok/lombok>
+
 #### Ambiente Linux
 
 Para a instalação do *JDK* (versão 17) e do *JRE* em sua máquina com *Linux*, recomenda-se o acesso ao tutorial mais "agradável" para a resolução de sua dúvida dentre as seguintes opções:
@@ -224,6 +237,8 @@ Para a instalação do *JDK* (versão 17) e do *JRE* em sua máquina com *Window
 - **JRE(version 1.8 or above) Installation for Microsoft Windows (4229374)**. Disponível em: <https://support.quest.com/pt-br/kb/4229374/jre-version-1-8-or-above-installation-for-microsoft-windows>.
 - **Download and Install Java Development Kit (JDK) on Windows, Mac, and Linux**. Disponível em: <https://www.geeksforgeeks.org/download-and-install-java-development-kit-jdk-on-windows-mac-and-linux/>.
 - **Material fornecido pela docente para o conteúdo de Sistemas Multiagentes via ambiente Aprender3**;
+- **Repositório de Dependências do Maven**. Disponível em: <https://mvnrepository.com/>.
+- **Maven Wrapper**. Disponível em: <https://maven.apache.org/wrapper/>.
 
 <!-- Referencie, adequadamente, as referências utilizadas.
 Indique ainda sobre fontes de leitura complementares. -->
