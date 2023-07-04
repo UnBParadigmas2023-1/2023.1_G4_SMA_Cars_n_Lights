@@ -182,10 +182,6 @@ Abaixo, as informações relativas à área e à significância da contribuiçã
 - A curva de aprendizado do paradigma SMA é relativamente alta e, consequentemente, o projeto pode apresentar complexidade relativamente elevada. Logo, seu início deve ser com relativa antecedência à data de entrega!
 - Projetos que adotam o paradigma SMA exigem um bom planejamento e participação ativa de todos os membros.
 
-<p align="center">
-  <img src="https://tenor.com/uOkb.gif" width="350" />
-</p>
-
 <!-- Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
 (i) Lições Aprendidas;
 (ii) Percepções;
