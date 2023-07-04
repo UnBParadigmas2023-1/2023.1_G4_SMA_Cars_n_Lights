@@ -24,7 +24,7 @@
 
 ## Sobre
 
-O presente projeto visa simular o comportamento do trânsito de uma cidade, incluindo **veículos**, **semáforos**, **controladores de semáforos**, **pedestres**, e **faixas de pedestre**, sendo estes representados enquanto agentes que interagem entre si e com os elementos da cidade.
+O presente projeto visa simular o comportamento do trânsito de uma cidade, incluindo **veículos**, **semáforos**, **controladores de semáforos**, **pedestres**, e **faixas de pedestre** (*estes dois últimos não apresentados no projeto final*), sendo estes representados enquanto agentes que interagem entre si e com os elementos da cidade.
 
 O propósito do projeto é exercitar o **Paradigma Sistema Multiagentes**, de modo que todos os elementos supracitados apresentem comportamentos autônomos, capacidade de reação a estímulos e capacidade de possível comunicação com os demais agentes.
 
@@ -36,7 +36,13 @@ Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no 
 
 ### Projeto
 
-Em andamento.
+![Interface do Projeto](./assets/legenda_semaforos.jpg)
+
+Acima, uma imagem apresentando a interface do projeto, onde é possível ver as vias, que se cruzam e formam os cruzamentos. Nos cruzamentos estão dispostos os semáforos, que visualmente são "círculos" que podem adotar a coloração vermelha (quando fechado) ou verde (quando aberto). Os veículos são representados por "quadrados" com cores aleatórias que se movem pelas vias e respeitam os semáforos.
+
+![Interface do Projeto](./assets/legenda_semaforos.jpg)
+
+*Acima, uma imagem apresentando a interface do projeto.*
 
 ### Semáforos e *Commanders*
 
@@ -53,11 +59,13 @@ No projeto, há doze semáforos ao todo, sendo estes divididos nas "áreas de in
 Vale destacar que as os semáforos são representados pelas "circunferências" localizadas ao lado de cruzamentos, podendo estes adotar duas diferentes cores: verde (quando aberto) e vermelho (quando fechado).
 
 ![Legenda dos Semáforos](assets/legenda_semaforos.jpg)
+
 *Acima, as duas possíveis representações dos semáforos.*
 
 Já os veículos são representados por "quadrados" com cores aleatórias que se movem ao longo das vias e cruzamentos, como pode ser visto abaixo:
 
 ![Legenda dos Veículos](assets/legenda_carros.jpg)
+
 *Acima, algumas das possíveis representações dos veículos.*
 
 <!-- Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento. -->
@@ -121,7 +129,7 @@ Nessa seção, deve-se revelar de forma clara sobre o funcionamento do software.
 
 ## Vídeo
 
-Em andamento.
+[Apresentação do projeto](https://www.youtube.com)
 
 <!-- Adicione 1 ou mais vídeos com a execução do projeto.
 Procure: 
@@ -138,37 +146,41 @@ Abaixo, as informações relativas à área e à significância da contribuiçã
 
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto |
 | -- | -- | -- |
-| André Corrêa da Silva | Desenvolvimento do *CarAgent* (e suas devidas particularidades) e Documentação |  Em andamento.  |
-| Douglas da Silva Monteles | Desenvolvimento do *CarAgent*, dos Grafos, da Interface (Mapa e Carros) e da Estrutura Geral do Projeto. |  Em andamento.  |
-| Eliseu Kadesh Rosa Assunção Jr. |  Desenvolvimento do Pedestre (e suas devidas particularidades) |  Em andamento.  |
-| Felipe Candido de Moura | Desenvolvimento dos Semáforos e Commanders (e suas devidas particularidades) e Documentação  |  Em andamento.  |
-| Gabriel Mariano da Silva | Desenvolvimento dos Semáforos e Commanders (e suas devidas particularidades) e Documentação |  Em andamento.  |
-| João Lucas Pinto Vasconcelos | Desenvolvimento do *CarAgent*, dos Grafos (e suas particularidades) |  Em andamento.  |
-| Matheus Pimentel Leal | Desenvolvimento do Pedestre (e suas devidas particularidades) |  Em andamento.  |
-| Rafael Fernandes Amancio | Desenvolvimento da Faixa de Pedestre (e suas devidas particularidades) |  Em andamento.  |
-| Victor Eduardo Araújo Ribeiro | Desenvolvimento da Faixa de Pedestre (e suas devidas particularidades) |  Em andamento.  |
+| André Corrêa da Silva | Desenvolvimento do *CarAgent* (e suas devidas particularidades) e Documentação |  Excelente.  |
+| Douglas da Silva Monteles | Desenvolvimento do *CarAgent*, dos Grafos, da Interface (Mapa e Carros) e da Estrutura Geral do Projeto. |  Excelente.  |
+| Eliseu Kadesh Rosa Assunção Jr. |  Desenvolvimento do Pedestre (e suas devidas particularidades) |  Excelente.  |
+| Felipe Candido de Moura | Desenvolvimento dos Semáforos e Commanders (e suas devidas particularidades) e Documentação  |  Excelente.  |
+| Gabriel Mariano da Silva | Desenvolvimento dos Semáforos e Commanders (e suas devidas particularidades) e Documentação |  Excelente.  |
+| João Lucas Pinto Vasconcelos | Desenvolvimento do *CarAgent*, dos Grafos (e suas particularidades) |  Excelente.  |
+| Matheus Pimentel Leal | Desenvolvimento do Pedestre (e suas devidas particularidades) |  Excelente.  |
+| Rafael Fernandes Amancio | Desenvolvimento da Faixa de Pedestre (e suas devidas particularidades) |  Excelente.  |
+| Victor Eduardo Araújo Ribeiro | Desenvolvimento da Faixa de Pedestre (e suas devidas particularidades) |  ---  |
 
 ## Outros
 
 ### Lições Aprendidas
 
--
-- Em andamento.
+- Não deixar atividades para serem realizadas pouco antes da *deadline* do projeto!!!
+- O paradigma SMA apresenta grande potencial de desenvolvivemnto de funcionalidades que envolvem a interação entre agentes (especialmente quando envolve a troca de mensagens);
+- Existe a possibilidade da adoção de ideias de outros paradigmas na utilização de um determinado paradigma.
+- A cooperação e planejamento entre os membros é fundamental para uma boa execução do projeto;
 
 ### Percepções
 
 - Durante o desenvolvimento do projeto foram encontradas dificuldades relativas à configuração do ambiente. Como os diferentes membros do grupo usam variados *sistemas operacionais*, a configuração das tecnologias necessárias para a execução do projeto adotou certo grau de dificuldade, que exigiu pesquisa e cooperação entre os membros para a resolução dos mesmos;
-- Em andamento;
+- O *JADE* possui certa complexidade quanto a busca de informações na internet, i.e., a documentação e a comunidade são relativamente escassas, segundo a percepção de alguns membro;
+- Houve grande dificuldade na configuração dos ambientes de desenvolvimento, sejam eles *Linux* ou *Windows*;
+- O cansaço acumulado durante o semestre traz implicações no desempenho dos membros no trabalho.
 
 ### Contribuições e Fragilidades
 
--
-- Em andamento.
+- O trabalho infelizmente falhou em atingir todo o potencial de seu escopo inicialmente definido e posteriormente reduzido.
+- No tocante as contribuições, o material de consulta e pesquisa fornecido pela docente foi essencial para o entendimento do paradigma e para a implementação do projeto.
 
 ### Trabalhos Futuros
 
--
-- Em andamento
+- A curva de aprendizado do paradigma SMA é relativamente alta e, consequentemente, o projeto pode apresentar complexidade relativamente elevada. Logo, seu início deve ser com relativa antecedência à data de entrega!
+- Projetos que adotam o paradigma SMA exigem um bom planejamento e participação ativa de todos os membros.
 
 <!-- Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
 (i) Lições Aprendidas;
@@ -178,7 +190,7 @@ Abaixo, as informações relativas à área e à significância da contribuiçã
 
 ### Instalação e Configuração do JDK e JRE
 
-Ter o **Java Development Kit (JDK)** e o **Java Runtime Environment (JRE)** instalados em sua máquina é essencial para a execução do projeto. Para tal, siga os tutoriais de instalação dos *softwares* em questão para cada sistema operacional no qual se deseja executar o projeto.
+Ter o **Java Development Kit (JDK ou OpenJDK versão 17)** e o **Java Runtime Environment (JRE)** instalados em sua máquina é essencial para a execução do projeto. Para tal, siga os tutoriais de instalação dos *softwares* em questão para cada sistema operacional no qual se deseja executar o projeto.
 
 #### Ambiente Linux
 
@@ -199,7 +211,7 @@ Para a instalação do *JDK* (versão 17) e do *JRE* em sua máquina com *Window
 - [Guia de instalação do *JDK* no *Windows, Mac* e *Linux*](https://www.geeksforgeeks.org/download-and-install-java-development-kit-jdk-on-windows-mac-and-linux/): O guia apresenta um passo a passo intuitivo de instalação do *JDK versão 17* e de configuração das variáveis de ambiente no *Windows*;
 - [Guia de instalação do *JRE* em ambiente *Windows*](https://support.quest.com/pt-br/kb/4229374/jre-version-1-8-or-above-installation-for-microsoft-windows): O breve tutorial apresenta imagens do passo a passo na instalação do *JRE* no *Windows*.
 
-## Fontes
+## Fontes e Referências
 
 - **JADE - JAVA Agent Development Framework**. Disponível em: <https://jade.tilab.com/>;
 - **How to Run a Makefile in Windows**. Disponível em: <https://linuxhint.com/run-makefile-windows/>;
@@ -211,6 +223,7 @@ Para a instalação do *JDK* (versão 17) e do *JRE* em sua máquina com *Window
 - **Install the Java Runtime Environment**. Disponível em: <https://ubuntu.com/tutorials/install-jre#1-overview>.
 - **JRE(version 1.8 or above) Installation for Microsoft Windows (4229374)**. Disponível em: <https://support.quest.com/pt-br/kb/4229374/jre-version-1-8-or-above-installation-for-microsoft-windows>.
 - **Download and Install Java Development Kit (JDK) on Windows, Mac, and Linux**. Disponível em: <https://www.geeksforgeeks.org/download-and-install-java-development-kit-jdk-on-windows-mac-and-linux/>.
+- **Material fornecido pela docente para o conteúdo de Sistemas Multiagentes via ambiente Aprender3**;
 
 <!-- Referencie, adequadamente, as referências utilizadas.
 Indique ainda sobre fontes de leitura complementares. -->
