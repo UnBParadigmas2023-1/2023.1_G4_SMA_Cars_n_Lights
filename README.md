@@ -137,7 +137,7 @@ Nessa seção, deve-se revelar de forma clara sobre o funcionamento do software.
 
 ## Vídeo
 
-[Apresentação do projeto](https://www.youtube.com)
+[Vídeo da Apresentação do Projeto](https://unbbr.sharepoint.com/:v:/s/ParadigmasGrupo04/EV2s2fx8cgFEjuGZJEHjenMBDUcMKaYzQuUuFOtRNoo0hA?e=bXXjvI)
 
 <!-- Adicione 1 ou mais vídeos com a execução do projeto.
 Procure: 
@@ -200,11 +200,6 @@ Abaixo, as informações relativas à área e à significância da contribuiçã
 
 Ter o **Java Development Kit (JDK ou OpenJDK versão 17)** e o **Java Runtime Environment (JRE)** instalados em sua máquina é essencial para a execução do projeto. Para tal, siga os tutoriais de instalação dos *softwares* em questão para cada sistema operacional no qual se deseja executar o projeto.
 
-### Dependências do projeto
-
-- Jade: <https://mvnrepository.com/artifact/net.sf.ingenias/jade>
-- Lombok: <https://mvnrepository.com/artifact/org.projectlombok/lombok>
-
 #### Ambiente Linux
 
 Para a instalação do *JDK* (versão 17) e do *JRE* em sua máquina com *Linux*, recomenda-se o acesso ao tutorial mais "agradável" para a resolução de sua dúvida dentre as seguintes opções:
@@ -223,6 +218,12 @@ Para a instalação do *JDK* (versão 17) e do *JRE* em sua máquina com *Window
 - [*Downloads* do *Java* para Todos os Sistemas operacionais](https://www.java.com/pt-BR/download/manual.jsp): Uma das formas de se proceder com a instalação do *JRE* é instalar a versão mais adequada para a sua máquina.
 - [Guia de instalação do *JDK* no *Windows, Mac* e *Linux*](https://www.geeksforgeeks.org/download-and-install-java-development-kit-jdk-on-windows-mac-and-linux/): O guia apresenta um passo a passo intuitivo de instalação do *JDK versão 17* e de configuração das variáveis de ambiente no *Windows*;
 - [Guia de instalação do *JRE* em ambiente *Windows*](https://support.quest.com/pt-br/kb/4229374/jre-version-1-8-or-above-installation-for-microsoft-windows): O breve tutorial apresenta imagens do passo a passo na instalação do *JRE* no *Windows*.
+
+### Dependências do projeto
+
+- Jade: <https://mvnrepository.com/artifact/net.sf.ingenias/jade>
+- Lombok: <https://mvnrepository.com/artifact/org.projectlombok/lombok>
+
 
 ## Fontes e Referências
 
